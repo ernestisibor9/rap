@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LeaderController;
 use App\Http\Controllers\LyricsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SongController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\AdminRole;
@@ -54,6 +55,16 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
     Route::post('/admin/profile/update', [AdminController::class, 'AdminProfileUpdate'])->name('admin.profile.update');
 
 
+    // Search Controller
+    Route::controller(SearchController::class)->group(function(){
+        Route::get('/search/directory', 'SearchDirectory')->name('search.directory');
+        Route::post('/add/search/directory', 'SearchDirectoryStore')->name('search.directory.store');
+        Route::get('/search/manage', 'SearchManage')->name('search.manage');
+        Route::get('/search/directory/{id}', 'AllContent')->name('all.content3');
+        Route::post('/search/directory/item', 'SearchDirectoryItem')->name('search.directory.item');
+    });
+
+
     // Minutes Controller
     Route::controller(MinutesController::class)->group(function(){
         Route::get('/admin/praise/night', 'AddPraiseNight')->name('admin.praise.night');
@@ -85,6 +96,8 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
         Route::get('/praise/night/all/content/{id}', 'AllContent')->name('all.content');
         Route::get('/healing/stream/all/content/{id}', 'AllHealingContent')->name('all.healing.content');
         Route::get('/view/doc/{id}', 'ViewDoc')->name('view.doc');
+        Route::get('/view/doc2/{id}', 'ViewDoc2')->name('view.doc2');
+        Route::get('/view/doc3/{id}', 'ViewDoc3')->name('view.doc3');
         Route::get('/admin/healing/stream/view', 'HealingStreamView')->name('admin.healing.stream.view');
         Route::post('/admin/add/healing/stream', 'HealingStreamStore')->name('healing.stream.store');
         Route::get('/healing/stream/march', 'HealingStreamMarch')->name('healing_stream_march');
@@ -98,7 +111,7 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
         Route::get('/edit/praise/night/{id}', 'EditPraiseNight')->name('edit.praise.night');
         Route::get('/edit/christmas/service/{id}', 'EditChristmasService')->name('christmas.service.edit');
         Route::post('/christmas/service/update', 'UpdateChristmasService')->name('christmas.service.update');
-        Route::get('/delete/christmas/service/{id}', 'DeleteChristmasService')->name('christmas.service.delete');
+        Route::get('/delete/christmas/service/{id}', 'DeleteChristmasService')->name('delete.christmas.service');
 	});
 
     // Song Controller

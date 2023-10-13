@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('christmas', function (Blueprint $table) {
             $table->id();
-            $table->string('date_upload')->nullable();
+            $table->string('title')->nullable();
+            $table->string('christmas')->nullable();
+            $table->date('date_upload')->nullable();
             $table->string('pdf_file')->nullable();
+            $table->text('content')->nullable();
             $table->timestamps();
         });
     }

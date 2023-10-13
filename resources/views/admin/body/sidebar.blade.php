@@ -18,9 +18,29 @@
 						<div class="menu-title">Dashboard</div>
 					</a>
 				</li>
+
+				{{-- <li>
+					<a href="{{ route('search.directory') }}" class="">
+						<div class="parent-icon"><i class='bx bx-search'></i>
+						</div>
+						<div class="menu-title">Search Directory</div>
+					</a>
+				</li> --}}
 				
 				<li class="menu-label">RAP Menus</li>
-				
+				<li>
+					<a href="#" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-search'></i>
+						</div>
+						<div class="menu-title">Search Directory</div>
+					</a>
+					<ul>
+						<li> <a href="{{ route('search.directory') }}"><i class='bx bx-radio-circle'></i>Add Directory</a>
+						</li>
+						<li> <a href="{{ route('search.manage') }}"><i class='bx bx-radio-circle'></i>Manage Directory</a>
+						</li>
+					</ul>
+				</li>
 				<li>
 					<a href="#" class="has-arrow">
 						<div class="parent-icon"><i class='bx bx-book'></i>
@@ -34,7 +54,7 @@
 						</li>
 						<li> <a href="{{ route('admin.christmas.service.view') }}"><i class='bx bx-radio-circle'></i>Christmas Eve Service</a>
 						</li>
-						<li> <a href=""><i class='bx bx-radio-circle'></i>Other Ministry Program</a>
+						<li> <a href="#"><i class='bx bx-radio-circle'></i>Other Ministry Program</a>
 						</li>
 					</ul>
 				</li>

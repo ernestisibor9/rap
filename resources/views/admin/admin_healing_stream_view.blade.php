@@ -128,16 +128,14 @@
                                 <label class="col-sm-3 col-form-label"></label>
                                 <div class="col-sm-9">
                                   <div class="d-md-flex d-grid align-items-center gap-3">
-                                    <button type="submit" class="btn btn-primary px-4">Submit</button>
-                                    <button type="button" class="btn btn-light px-4">Reset</button>
+                                    <button type="submit" class="btn btn-primary px-4">Add Healing Stream</button>
+                       
                                   </div>
                                 </div>
                               </div>
                             </form>
                           </div>
 													<div class="modal-footer">
-														<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-														<button type="button" class="btn btn-primary">Save changes</button>
 													</div>
 												</div>
 											</div>
@@ -147,7 +145,7 @@
 				</div><!--end row-->
 
 				<!--end row-->
-					<h6 class="mb-0 text-uppercase">DataTable Example</h6>
+					<h6 class="mb-0 text-uppercase">Healing Stream View</h6>
 				<hr/>
 				<div class="card">
 					<div class="card-body">
@@ -157,7 +155,6 @@
 									<tr>
 										<th>S/N</th>
 										<th>Healing Stream</th>
-										<th>Title</th>
 										<th>Uploaded PDF</th>
 										<th>Content</th>
 										<th>Created At</th>
@@ -169,7 +166,6 @@
 									<tr>
 										<td>{{ $key + 1 }}</td>
 										<td>{{ $item->healing_stream }}</td>
-										<td>{{ $item->title }}</td>
 										<td>{{ Str::substr($item->pdf_file, 0, 30) }}...</td>
 										<td>{{ Str::substr($item->content, 0, 30) }}
 											<a href="{{ route('all.healing.content', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
@@ -178,7 +174,7 @@
 										{{-- <td>{{ $item->date_upload->format('l M d Y') }}</td> --}}
 										<td>{{ Carbon\Carbon::parse($item->date_upload)->format('l M d Y') }}</td>
 										<td>
-											<a href="{{ route('view.doc', $item->id) }}" class="btn btn-success">View</a>
+											<a href="{{ route('view.doc3', $item->id) }}" class="btn btn-success">View</a>
                       <a href="{{ route('edit.healing.stream', $item->id) }}" class="btn btn-primary">Edit</a>
                       <a href="{{ route('delete.healing.stream', $item->id) }}" class="btn btn-danger" id="delete" title="Delete Data">Delete</a>
 										</td>
@@ -199,4 +195,17 @@
 
 			</div>
 
+			<script>
+				$(document).ready(function() {
+					var table = $('#example').DataTable( {
+						lengthChange: false,
+						searching: false,
+						// "bFilter": false,
+						buttons: [ 'copy', 'excel', 'pdf', 'print']
+					} );
+				
+					table.buttons().container()
+						.appendTo( '#example2_wrapper .col-md-6:eq(0)' );
+				} );
+			</script>
       @endsection

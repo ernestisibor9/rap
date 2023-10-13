@@ -111,8 +111,7 @@
 										<label class="col-sm-3 col-form-label"></label>
 										<div class="col-sm-9">
 											<div class="d-md-flex d-grid align-items-center gap-3">
-												<button type="submit" class="btn btn-primary px-4">Submit</button>
-												<button type="button" class="btn btn-light px-4">Reset</button>
+												<button type="submit" class="btn btn-primary px-4">Add Praise Night</button>
 											</div>
 										</div>
 									</div>
@@ -153,8 +152,6 @@
 						</div>
 						</div>
 					</div>
-
-					
 
 				<!--End Modal -->
 
@@ -264,7 +261,7 @@
 										<td>{{ $key + 1 }}</td>
 										<td>{{ $item->praise_night }}</td>
 										<td>{{ Str::substr($item->pdf_file, 0, 30) }}...</td>
-										<td>{{ Str::substr($item->content, 0, 30) }}
+										<td>{{ Str::substr($item->content, 0, 60) }}
 											<a href="{{ route('all.content', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
 										</td>
 										{{-- <td>{{ $item->date_upload }}</td> --}}
@@ -286,4 +283,17 @@
 					</div>
 				<!-- End of Table --->
 
+					<script>
+						$(document).ready(function() {
+							var table = $('#example').DataTable( {
+								lengthChange: false,
+								// searching: false,
+								"bFilter": false,
+								buttons: [ 'copy', 'excel', 'pdf', 'print']
+							} );
+						
+							table.buttons().container()
+								.appendTo( '#example2_wrapper .col-md-6:eq(0)' );
+						} );
+					</script>
       @endsection

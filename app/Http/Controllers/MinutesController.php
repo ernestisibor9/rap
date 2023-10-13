@@ -222,6 +222,16 @@ class MinutesController extends Controller
         $docs = PraiseNight::findOrFail($id);
         return view('admin.admin_view_pdf', compact('docs'));
     }
+    // View Doc2
+    public function ViewDoc2($id){
+        $docs = Christmas::findOrFail($id);
+        return view('admin.admin_view_pdf', compact('docs'));
+    }
+    // View Doc3
+    public function ViewDoc3($id){
+        $docs = HealingStream::findOrFail($id);
+        return view('admin.admin_view_pdf', compact('docs'));
+    }
     // View Praise Nights
     public function HealingStreamView(){
         $healingStream = HealingStream::latest()->get();
@@ -355,53 +365,80 @@ class MinutesController extends Controller
     }
     // Christmas Service View
     public function ChristmasServiceView(){
-        $titleData = Title::latest()->get();
-        $leaderData = Leader::latest()->get();
+        // $titleData = Title::latest()->get();
+        // $leaderData = Leader::latest()->get();
         $christmasData = Christmas::latest()->get();
-        return view('admin.admin_christmas_service_view', compact('titleData', 'leaderData', 'christmasData'));
+        return view('admin.admin_christmas_service_view', compact('christmasData'));
     }
     // Christmas Service Store
         public function ChristmasServiceStore(Request $request){
         $request->validate([
         'pdf_file' => 'required|mimes:pdf|max:2048', // PDF files, maximum 2MB
         'date_upload' => 'required',
+        'title' => 'required',
+        'content' => 'required',
         ]);
     
         $pdfPath = $request->file('pdf_file');
         $filename = date('YmdHi') . $pdfPath->getClientOriginalName();
         $pdfPath->move(public_path('upload/pdf_doc'), $filename);
-
+        // You can store the $pdfPath in your database if needed
+        // $dateOfUpload = date('Y-m-d', strtotime($request->date_upload));
+        
         Christmas::insert([
+            'christmas' => 'christmas',
             'date_upload' => $request->date_upload,
             'pdf_file' => $filename,
+            'title' => $request->title,
+            'content' => strip_tags($request->content),
             'created_at' => Carbon::now()
         ]);
         $notification = array(
-            'message'=> 'Healing stream added successfully',
+            'message'=> 'Christmas eve service uploaded successfully',
             'alert-type'=>'success'
         );
         return redirect()->back()->with($notification);
     }
     // Edit Christmas Service
     public function EditChristmasService($id){
-        $christmasView = Christmas::orderBy('year', 'ASC')->latest()->get();
+        // $christmasView = Christmas::orderBy('year', 'ASC')->latest()->get();
+        $christmasView = Christmas::latest()->get();    
         $christmasEdit = Christmas::findOrFail($id);
         return view('admin.admin_edit_christmas_service', compact('christmasEdit', 'christmasView'));
     }
     // Update Christmas Service 
     public function UpdateChristmasService(Request $request){
-        $christmasServiceUpdate = $request->id;
+        $christmasUpdate = $request->id;
         
-        Christmas::findOrFail($christmasServiceUpdate)->update([
-            'year'=> $request->year,
-            'title_id'=> $request->title_id,
-            'leader_id' => $request->leader_id
-        ]);
-        $notification = array(
-        'message'=> 'Christmas service updated successfully',
-        'alert-type'=>'success'
-        );
-        return redirect()->back()->with($notification);
+        if($request->file('pdf_file')){
+            $pdfPath = $request->file('pdf_file');
+            $filename = date('YmdHi') . $pdfPath->getClientOriginalName();
+            $pdfPath->move(public_path('upload/pdf_doc'), $filename);
+
+            Christmas::findOrFail($christmasUpdate)->update([
+                'christmas'=> $request->christmas,
+                'title' => $request->title,
+                'pdf_file' => $filename,
+                'content' => $request->content,
+            ]);
+            $notification = array(
+            'message'=> 'Christmas updated successfully ',
+            'alert-type'=>'success'
+            );
+            return redirect()->route('admin.praise.night.view')->with($notification);
+        }
+        else{
+            Christmas::findOrFail($christmasUpdate)->update([
+                'christmas'=> $request->christmas,
+                'title' => $request->title,
+                'content' => strip_tags($request->content),
+            ]);
+            $notification = array(
+            'message'=> 'Christmas service updated successfully',
+            'alert-type'=>'success'
+            );
+            return redirect()->route('admin.christmas.service.view')->with($notification);
+        }
         
     }
     // Delete Christmas Service
