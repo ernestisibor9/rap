@@ -1,92 +1,265 @@
-<!doctype html>
-<html lang="zxx">
-    <head>
-        <!-- Required Meta Tags -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
 
-        <!-- Bootstrap CSS --> 
-        <link rel="stylesheet" href="{{asset('frontend/assets/css/bootstrap.min.css')}}">
-        <!-- Animate Min CSS -->
-        <link rel="stylesheet" href="{{asset('frontend/assets/css/animate.min.css')}}">
-        <!-- Flaticon CSS -->
-        <link rel="stylesheet" href="{{asset('frontend/assets/fonts/flaticon.css')}}">
-        <!-- Boxicons CSS -->
-        <link rel="stylesheet" href="{{asset('frontend/assets/css/boxicons.min.css')}}">
-        <!-- Magnific Popup CSS -->
-        <link rel="stylesheet" href="{{asset('frontend/assets/css/magnific-popup.css')}}">
-        <!-- Owl Carousel Min CSS --> 
-        <link rel="stylesheet" href="{{asset('frontend/assets/css/owl.carousel.min.css')}}">
-        <link rel="stylesheet" href="{{asset('frontend/assets/css/owl.theme.default.min.css')}}">
-        <!-- Nice Select Min CSS --> 
-        <link rel="stylesheet" href="{{asset('frontend/assets/css/nice-select.min.css')}}">
-        <!-- Meanmenu CSS -->
-        <link rel="stylesheet" href="{{asset('frontend/assets/css/meanmenu.css')}}">
-        <!-- Jquery Ui CSS -->
-        <link rel="stylesheet" href="{{asset('frontend/assets/css/jquery-ui.css')}}">
-        <!-- Style CSS -->
-        <link rel="stylesheet" href="{{asset('frontend/assets/css/style.css')}}">
-        <!-- Responsive CSS -->
-        <link rel="stylesheet" href="{{asset('frontend/assets/css/responsive.css')}}">
-        <!-- Theme Dark CSS -->
-        <link rel="stylesheet" href="{{asset('frontend/assets/css/theme-dark.css')}}">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Skydash Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{{asset('frontend/vendors/feather/feather.css')}}">
+  <link rel="stylesheet" href="{{asset('frontend/vendors/ti-icons/css/themify-icons.css')}}">
+  <link rel="stylesheet" href="{{asset('frontend/vendors/css/vendor.bundle.base.css')}}">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  {{-- <link rel="stylesheet" href="{{asset('frontend/vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}"> --}}
+  <link rel="stylesheet" href="{{asset('frontend/vendors/ti-icons/css/themify-icons.css')}}">
+  {{-- <link rel="stylesheet" type="text/css" href="{{asset('frontend/js/select.dataTables.min.css')}}"> --}}
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{{asset('frontend/css/vertical-layout-light/style.css')}}">
+  <!-- endinject -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-        <!-- Favicon -->
-        <link rel="icon" type="image/png" href="{{asset('frontend/assets/img/favicon.png')}}">
+  <link rel="shortcut icon" href="{{asset('frontend/images/favicon.png')}}" />
+</head>
 
-        <title>Atoli - Hotel & Resorts HTML Template</title>
-    </head>
-    <body>
-
-        <!-- Top Header Start -->
-        @include('frontend.body.header')
-        <!-- Top Header End -->
-
-        <!-- Start Navbar Area -->
-        @include('frontend.body.navbar')
-        <!-- End Navbar Area -->
-
-        <!-- Banner Area -->
-        @include('frontend.body.banner')
-        <!-- Banner Area End -->
-
-        <!-- Banner Form Area -->
-        @include('frontend.body.banner_form')
-        <!-- Banner Form Area End -->
-
-        <!-- Room Area -->
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    @include('frontend.body.navbar')
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_settings-panel.html -->
+      <div class="theme-setting-wrapper">
+        <div id="settings-trigger"><i class="ti-settings"></i></div>
+        <div id="theme-settings" class="settings-panel">
+          <i class="settings-close ti-close"></i>
+          <p class="settings-heading">SIDEBAR SKINS</p>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
+          <p class="settings-heading mt-2">HEADER SKINS</p>
+          <div class="color-tiles mx-0 px-4">
+            <div class="tiles success"></div>
+            <div class="tiles warning"></div>
+            <div class="tiles danger"></div>
+            <div class="tiles info"></div>
+            <div class="tiles dark"></div>
+            <div class="tiles default"></div>
+          </div>
+        </div>
+      </div>
+      <div id="right-sidebar" class="settings-panel">
+        <i class="settings-close ti-close"></i>
+        <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab" aria-controls="chats-section">CHATS</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="setting-content">
+          <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
+            <div class="add-items d-flex px-3 mb-0">
+              <form class="form w-100">
+                <div class="form-group d-flex">
+                  <input type="text" class="form-control todo-list-input" placeholder="Add To-do">
+                  <button type="submit" class="add btn btn-primary todo-list-add-btn" id="add-task">Add</button>
+                </div>
+              </form>
+            </div>
+            <div class="list-wrapper px-3">
+              <ul class="d-flex flex-column-reverse todo-list">
+                <li>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox">
+                      Team review meeting at 3.00 PM
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox">
+                      Prepare for presentation
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox">
+                      Resolve all the low priority tickets due today
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li class="completed">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox" checked>
+                      Schedule meeting for next week
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li class="completed">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox" checked>
+                      Project review
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+              </ul>
+            </div>
+            <h4 class="px-3 text-muted mt-5 font-weight-light mb-0">Events</h4>
+            <div class="events pt-4 px-3">
+              <div class="wrapper d-flex mb-2">
+                <i class="ti-control-record text-primary mr-2"></i>
+                <span>Feb 11 2018</span>
+              </div>
+              <p class="mb-0 font-weight-thin text-gray">Creating component page build a js</p>
+              <p class="text-gray mb-0">The total number of sessions</p>
+            </div>
+            <div class="events pt-4 px-3">
+              <div class="wrapper d-flex mb-2">
+                <i class="ti-control-record text-primary mr-2"></i>
+                <span>Feb 7 2018</span>
+              </div>
+              <p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
+              <p class="text-gray mb-0 ">Call Sarah Graves</p>
+            </div>
+          </div>
+          <!-- To do section tab ends -->
+          <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
+            <div class="d-flex align-items-center justify-content-between border-bottom">
+              <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
+              <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">See All</small>
+            </div>
+            <ul class="chat-list">
+              <li class="list active">
+                <div class="profile"><img src="images/faces/face1.jpg" alt="image"><span class="online"></span></div>
+                <div class="info">
+                  <p>Thomas Douglas</p>
+                  <p>Available</p>
+                </div>
+                <small class="text-muted my-auto">19 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
+                <div class="info">
+                  <div class="wrapper d-flex">
+                    <p>Catherine</p>
+                  </div>
+                  <p>Away</p>
+                </div>
+                <div class="badge badge-success badge-pill my-auto mx-2">4</div>
+                <small class="text-muted my-auto">23 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="images/faces/face3.jpg" alt="image"><span class="online"></span></div>
+                <div class="info">
+                  <p>Daniel Russell</p>
+                  <p>Available</p>
+                </div>
+                <small class="text-muted my-auto">14 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
+                <div class="info">
+                  <p>James Richardson</p>
+                  <p>Away</p>
+                </div>
+                <small class="text-muted my-auto">2 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="images/faces/face5.jpg" alt="image"><span class="online"></span></div>
+                <div class="info">
+                  <p>Madeline Kennedy</p>
+                  <p>Available</p>
+                </div>
+                <small class="text-muted my-auto">5 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="images/faces/face6.jpg" alt="image"><span class="online"></span></div>
+                <div class="info">
+                  <p>Sarah Graves</p>
+                  <p>Available</p>
+                </div>
+                <small class="text-muted my-auto">47 min</small>
+              </li>
+            </ul>
+          </div>
+          <!-- chat tab ends -->
+        </div>
+      </div>
+      <!-- partial -->
+      <!-- partial:partials/_sidebar.html -->
+      @include('frontend.body.sidebar')
+      <!-- partial -->
+      <div class="main-panel">
         @yield('main')
-        <!-- Room Area End -->
-
-        <!-- Footer Area -->
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
         @include('frontend.body.footer')
-        <!-- Footer Area End -->
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  <!-- plugins:js -->
+  <script src="{{asset('frontend/vendors/js/vendor.bundle.base.js')}}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="{{asset('frontend/vendors/chart.js/Chart.min.js')}}"></script>
+  {{-- <script src="{{asset('frontend/vendors/datatables.net/jquery.dataTables.js')}}"></script>
+  <script src="{{asset('frontend/vendors/datatables.net-bs4/dataTables.bootstrap4.js')}}"></script>
+  <script src="{{asset('frontend/js/dataTables.select.min.js')}}"></script> --}}
+
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="{{asset('frontend/js/off-canvas.js')}}"></script>
+  <script src="{{asset('frontend/js/hoverable-collapse.js')}}"></script>
+  <script src="{{asset('frontend/js/template.js')}}"></script>
+  <script src="{{asset('frontend/js/settings.js')}}"></script>
+  <script src="{{asset('frontend/js/todolist.js')}}"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="{{asset('frontend/js/dashboard.js')}}"></script>
+  <script src="{{asset('frontend/js/Chart.roundedBarCharts.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-        <!-- Jquery Min JS -->
-        <script src="{{asset('frontend/')}}assets/js/jquery.min.js"></script>
-        <!-- Bootstrap Bundle Min JS -->
-        <script src="{{asset('frontend/')}}assets/js/bootstrap.bundle.min.js"></script>
-        <!-- Magnific Popup Min JS -->
-        <script src="{{asset('frontend/')}}assets/js/jquery.magnific-popup.min.js"></script>
-        <!-- Owl Carousel Min JS -->
-        <script src="{{asset('frontend/')}}assets/js/owl.carousel.min.js"></script>
-        <!-- Nice Select Min JS -->
-        <script src="{{asset('frontend/')}}assets/js/jquery.nice-select.min.js"></script>
-        <!-- Wow Min JS -->
-        <script src="{{asset('frontend/')}}assets/js/wow.min.js"></script>
-        <!-- Jquery Ui JS -->
-        <script src="{{asset('frontend/')}}assets/js/jquery-ui.js"></script>
-        <!-- Meanmenu JS -->
-        <script src="{{asset('frontend/assets/js/meanmenu.js')}}"></script>
-        <!-- Ajaxchimp Min JS -->
-        <script src="{{asset('frontend/assets/js/jquery.ajaxchimp.min.js')}}"></script>
-        <!-- Form Validator Min JS -->
-        <script src="{{asset('frontend/assets/js/form-validator.min.js')}}"></script>
-        <!-- Contact Form JS -->
-        <script src="{{asset('frontend/assets/js/contact-form-script.js')}}"></script>
-        <!-- Custom JS -->
-        <script src="{{asset('frontend/assets/js/custom.js')}}"></script>
-        
-    </body>
+  <script src="{{ asset('frontend/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+	<script src="{{ asset('frontend/plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
+
+  <script>
+		$(document).ready(function() {
+			$('#example').DataTable();
+		  } );
+	</script>
+	<script>
+		$(document).ready(function() {
+			var table = $('#example2').DataTable( {
+				lengthChange: false,
+				buttons: [ 'copy', 'excel', 'pdf', 'print']
+			} );
+		 
+			table.buttons().container()
+				.appendTo( '#example2_wrapper .col-md-6:eq(0)' );
+		} );
+	</script>
+  <!-- End custom js for this page-->
+</body>
+
 </html>
+

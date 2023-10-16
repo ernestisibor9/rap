@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('healing_streams', function (Blueprint $table) {
             $table->id();
             $table->string('healing_stream')->nullable();
+            $table->string('year')->nullable();
             $table->string('pdf_file')->nullable();
             $table->string('date_upload')->nullable();
             $table->string('title')->nullable();

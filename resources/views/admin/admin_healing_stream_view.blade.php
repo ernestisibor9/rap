@@ -86,7 +86,25 @@
                                     </select>
                                 </div>
                               </div>
-
+															<div class="row mb-3">
+                                <label for="input46" class="col-sm-3 col-form-label">Select Year</label>
+                                <div class="col-sm-9">
+                                  <select class="form-select" name="year" id="input46">
+                                    <option selected>Select Year </option>
+                                    <option value="2030">2030</option>
+                                    <option value="2029">2029</option>
+                                    <option value="2028">2028</option>
+																		<option value="2027">2027</option>
+																		<option value="2026">2026</option>
+																		<option value="2025">2025</option>
+																		<option value="2024">2024</option>
+																		<option value="2023">2023</option>
+																		<option value="2022">2022</option>
+																		<option value="2021">2021</option>
+																		<option value="2020">2020</option>
+                                    </select>
+                                </div>
+                              </div>
 															<div class="row mb-3">
 																<label for="input46" class="col-sm-3 col-form-label">Title</label>
 																<div class="col-sm-9">
@@ -155,6 +173,7 @@
 									<tr>
 										<th>S/N</th>
 										<th>Healing Stream</th>
+										<th>Year</th>
 										<th>Uploaded PDF</th>
 										<th>Content</th>
 										<th>Created At</th>
@@ -166,6 +185,7 @@
 									<tr>
 										<td>{{ $key + 1 }}</td>
 										<td>{{ $item->healing_stream }}</td>
+										<td>{{ $item->year }}</td>
 										<td>{{ Str::substr($item->pdf_file, 0, 30) }}...</td>
 										<td>{{ Str::substr($item->content, 0, 30) }}
 											<a href="{{ route('all.healing.content', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>

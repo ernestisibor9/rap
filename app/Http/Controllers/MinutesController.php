@@ -243,6 +243,7 @@ class MinutesController extends Controller
         $request->validate([
         'pdf_file' => 'required|mimes:pdf|max:2048', // PDF files, maximum 2MB
         'date_upload' => 'required',
+        'year' => 'required',
         'healing_stream' => 'required',
         'title' => 'required',
         'content' => 'required'
@@ -255,6 +256,7 @@ class MinutesController extends Controller
         HealingStream::insert([
             'healing_stream' => $request->healing_stream,
             'date_upload' => $request->date_upload,
+            'year' => $request->year,
             'pdf_file' => $filename,
             'title' => $request->title,
             'content' => strip_tags($request->content),

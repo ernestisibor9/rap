@@ -126,7 +126,7 @@
 					</div>
 							</div>
 							<div class="col-8">
-							<select onchange="window.location.href=this.value;" class="form-select" name="healing_stream" id="input46">
+							<select onchange="window.location.href=this.value;" class="form-select" name="praise_night" id="input46">
 								<option selected>Select Praise Night</option>
 								<option value="{{ route('praise_night_one') }}">Praise Night 1</option>
 								<option value="{{ route('praise_night_two') }}">Praise Night 2</option>

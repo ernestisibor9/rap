@@ -8,6 +8,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SongController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserPraiseNightController;
+use App\Http\Controllers\UserSearchController;
 use App\Http\Middleware\AdminRole;
 use Illuminate\Support\Facades\Route;
 
@@ -27,11 +29,35 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [UserController::class, 'Index']);
-Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout');
+
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('frontend.user_dashboard');
+})->middleware(['auth', 'verified'])->name('user.dashboard');
+
+Route::middleware(['auth', 'roles:user'])->group(function(){
+    Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout');
+    Route::get('/user/praise/night/select', [UserPraiseNightController::class, 'PraiseNightSelect'])->name('praise_night_select');
+    Route::get('/user/praise/night/1', [UserPraiseNightController::class, 'PraiseNight1'])->name('praise.night.1');
+    Route::get('/user/praise/night/2', [UserPraiseNightController::class, 'PraiseNight2'])->name('praise.night.2');
+    Route::get('/user/praise/night/3', [UserPraiseNightController::class, 'PraiseNight3'])->name('praise.night.3');
+    Route::get('/user/praise/night/4', [UserPraiseNightController::class, 'PraiseNight4'])->name('praise.night.4');
+    Route::get('/user/praise/night/5', [UserPraiseNightController::class, 'PraiseNight5'])->name('praise.night.5');
+    Route::get('/user/praise/night/6', [UserPraiseNightController::class, 'PraiseNight6'])->name('praise.night.6');
+    Route::get('/user/praise/night/7', [UserPraiseNightController::class, 'PraiseNight7'])->name('praise.night.7');
+    Route::get('/user/praise/night/8', [UserPraiseNightController::class, 'PraiseNight8'])->name('praise.night.8');
+    Route::get('/user/praise/night/9', [UserPraiseNightController::class, 'PraiseNight9'])->name('praise.night.9');
+    Route::get('/user/praise/night/10', [UserPraiseNightController::class, 'PraiseNight10'])->name('praise.night.10');
+    Route::get('/user/praise/night/11', [UserPraiseNightController::class, 'PraiseNight11'])->name('praise.night.11');
+    Route::get('/viewpdf/doc/{id}', [UserPraiseNightController::class, 'ViewPdf'])->name('view.pdf');
+    Route::get('/praise/night/full/content/{id}', [UserPraiseNightController::class, 'FullContent'])->name('full.content');
+    
+    // Search 
+    Route::get('/user/search/directory', [UserSearchController::class, 'SearchDirectory'])->name('user.search');
+    Route::post('/user/search/directory/item', [UserSearchController::class, 'SearchDirectoryItem'])->name('search_directory_item');
+    Route::get('/viewpdfdoc/doc/{id}', [UserSearchController::class, 'ViewPdfDoc'])->name('view.pdfdoc');
+    Route::get('/praise/night/full/content/doc/{id}', [UserSearchController::class, 'FullContentDoc'])->name('full.content.doc');
+});
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

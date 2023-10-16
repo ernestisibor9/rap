@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     // Users Home Page
     public function Index(){
-        return view('frontend.index');
+        return view('frontend.user_login');
     }
     // User Logout
     public function UserLogout(Request $request)
@@ -20,6 +20,6 @@ class UserController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect('/');
     }
 }

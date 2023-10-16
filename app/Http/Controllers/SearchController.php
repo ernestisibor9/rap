@@ -58,6 +58,5 @@ class SearchController extends Controller
         $searchData = Search::where('content', 'like' , '%' .$item. '%')->orWhere('title', 'like' , '%' .$item. '%')->get();
 
         return view('admin.admin_search_view2',compact('searchData'));
-
     }
 }
