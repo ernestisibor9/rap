@@ -59,4 +59,57 @@ class SearchController extends Controller
 
         return view('admin.admin_search_view2',compact('searchData'));
     }
+    // Edit
+    // Edit Praise Night
+    public function EditSearch($id){
+        $searchView = Search::latest()->get();
+        $searchEdit = Search::findOrFail($id);
+        return view('admin.admin_search_edit', compact('searchView', 'searchEdit'));
+    }
+    // Update
+    public function UpdateSearch(Request $request){
+        $SearchUpdate = $request->id;
+        
+        if($request->file('pdf_file')){
+            $pdfPath = $request->file('pdf_file');
+            $filename = date('YmdHi') . $pdfPath->getClientOriginalName();
+            $pdfPath->move(public_path('upload/pdf_doc'), $filename);
+
+            Search::findOrFail($SearchUpdate)->update([
+                'date_upload'=> $request->date_upload,
+                'title'=> $request->title,
+                'pdf_file' => $filename,
+                'content' => $request->content,
+            ]);
+            $notification = array(
+            'message'=> 'Search directory successfully updated',
+            'alert-type'=>'success'
+            );
+            return redirect()->route('search.manage')->with($notification);
+        }
+        else{
+            Search::findOrFail($SearchUpdate)->update([
+                'date_upload'=> $request->date_upload,
+                'title'=> $request->title,
+                'content' => $request->content,
+            ]);
+            $notification = array(
+            'message'=> 'Search directory successfully updated ',
+            'alert-type'=>'success'
+            );
+            return redirect()->route('search.manage')->with($notification);
+        }
+    }
+    // Delete
+    public function DeleteSearch($id){
+
+        Search::findOrFail($id)->delete();
+        $notification = array(
+            'message'=> 'Search deleted successfully',
+            'alert-type'=>'success'
+        );
+        return redirect()->back()->with($notification);
+
+    }
+
 }

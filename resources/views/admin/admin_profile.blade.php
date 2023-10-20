@@ -15,11 +15,11 @@
 							<ol class="breadcrumb mb-0 p-0">
 								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
 								</li>
-								<li class="breadcrumb-item active" aria-current="page">User Profilep</li>
+								<li class="breadcrumb-item active" aria-current="page">User Profile</li>
 							</ol>
 						</nav>
 					</div>
-					<div class="ms-auto">
+					{{-- <div class="ms-auto">
 						<div class="btn-group">
 							<button type="button" class="btn btn-primary">Settings</button>
 							<button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
@@ -30,7 +30,7 @@
 								<div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
 							</div>
 						</div>
-					</div>
+					</div> --}}
 				</div>
 				<!--end breadcrumb-->
 				<div class="container">
@@ -44,11 +44,11 @@
 											<div class="mt-3">
 												<h4>{{ $profileData->name }}</h4>
 												<p class="text-secondary mb-1">{{ $profileData->email }}</p>
-												<p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+												<p class="text-muted font-size-sm"></p>
 											</div>
 										</div>
 										<hr class="my-4" />
-										<ul class="list-group list-group-flush">
+										{{-- <ul class="list-group list-group-flush">
 											<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
 												<h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe me-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Website</h6>
 												<span class="text-secondary">https://codervent.com</span>
@@ -58,7 +58,7 @@
 												<span class="text-secondary">codervent</span>
 											</li>
 
-										</ul>
+										</ul> --}}
 									</div>
 								</div>
 							</div>

@@ -54,7 +54,7 @@
 						</li>
 						<li> <a href="{{ route('admin.christmas.service.view') }}"><i class='bx bx-radio-circle'></i>Christmas Eve Service</a>
 						</li>
-						<li> <a href="#"><i class='bx bx-radio-circle'></i>Other Ministry Program</a>
+						<li> <a href="#"><i class='bx bx-radio-circle'></i>Other Ministry Programmes</a>
 						</li>
 					</ul>
 				</li>
@@ -65,9 +65,9 @@
 						<div class="menu-title">Songs Directory</div>
 					</a>
 					<ul>
-						<li> <a href="{{ route('admin.add.song') }}"><i class='bx bx-radio-circle'></i>Add Song</a>
+						<li> <a href="#"><i class='bx bx-radio-circle'></i>Add Song</a>
 						</li>
-						<li> <a href="{{ route('admin.manage.song') }}"><i class='bx bx-radio-circle'></i>Manage Songs</a>
+						<li> <a href="#"><i class='bx bx-radio-circle'></i>Manage Songs</a>
 						</li>
 					</ul>
 				</li>
@@ -91,9 +91,9 @@
 						<div class="menu-title">Lead Singers</div>
 					</a>
 					<ul>
-						<li> <a href="{{ route('admin.add.leader') }}"><i class='bx bx-radio-circle'></i>Add Leader</a>
+						<li> <a href="#"><i class='bx bx-radio-circle'></i>Add Leader</a>
 						</li>
-						<li> <a href="{{ route('manage.leader') }}"><i class='bx bx-radio-circle'></i>Manage Leader</a>
+						<li> <a href="#"><i class='bx bx-radio-circle'></i>Manage Leader</a>
 						</li>
 					</ul>
 				</li>

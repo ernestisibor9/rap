@@ -38,7 +38,7 @@ class MinutesController extends Controller
             'date_upload' => $request->date_upload,
             'pdf_file' => $filename,
             'title' => $request->title,
-            'content' => strip_tags($request->content),
+            'content' => $request->content,
             'created_at' => Carbon::now()
         ]);
         $notification = array(
@@ -217,6 +217,11 @@ class MinutesController extends Controller
         return redirect()->back()->with($notification);
 
     }
+    // Christmas all content
+    public function AllContent5($id){
+        $contentData = Christmas::findOrFail($id);
+        return view('admin.all_content5', compact('contentData'));
+    }
     // View Doc
     public function ViewDoc($id){
         $docs = PraiseNight::findOrFail($id);
@@ -259,7 +264,7 @@ class MinutesController extends Controller
             'year' => $request->year,
             'pdf_file' => $filename,
             'title' => $request->title,
-            'content' => strip_tags($request->content),
+            'content' => $request->content,
             'created_at' => Carbon::now()
         ]);
         $notification = array(
@@ -270,17 +275,17 @@ class MinutesController extends Controller
     }
     // Healing Stream March
     public function HealingStreamMarch(){
-        $healing_stream_march = HealingStream::where('healing_stream', 'healing_stream_march')->latest()->get();
+        $healing_stream_march = HealingStream::where('healing_stream', 'march')->latest()->get();
         return view('admin.admin_healing_stream_march', compact('healing_stream_march'));
     }
     // Healing Stream July
     public function HealingStreamJuly(){
-        $healing_stream_july = HealingStream::where('healing_stream', 'healing_stream_july')->latest()->get();
+        $healing_stream_july = HealingStream::where('healing_stream', 'july')->latest()->get();
         return view('admin.admin_healing_stream_july', compact('healing_stream_july'));
     }
     // Healing Stream October
     public function HealingStreamOctober(){
-        $healing_stream_october = HealingStream::where('healing_stream', 'healing_stream_october')->latest()->get();
+        $healing_stream_october = HealingStream::where('healing_stream', 'october')->latest()->get();
         return view('admin.admin_healing_stream_october', compact('healing_stream_october'));
     }
     // Edit Healing Stream
@@ -392,7 +397,7 @@ class MinutesController extends Controller
             'date_upload' => $request->date_upload,
             'pdf_file' => $filename,
             'title' => $request->title,
-            'content' => strip_tags($request->content),
+            'content' => $request->content,
             'created_at' => Carbon::now()
         ]);
         $notification = array(

@@ -2,7 +2,9 @@
 
 @section('main')
 
-
+@section('title')
+	RAP - Praise Night Select
+@endsection
 
   <div class="content-wrapper">
     <h6 class="mb-0 text-uppercase">Select Praise Night </h6>
@@ -72,7 +74,19 @@
 	</div>
   <!--end row-->
 
-  
+  <script>
+				$(document).ready(function() {
+					var table = $('#example').DataTable( {
+						lengthChange: false,
+						searching: false,
+						// "bFilter": false,
+						buttons: [ 'copy', 'excel', 'pdf', 'print']
+					} );
+				
+					table.buttons().container()
+						.appendTo( '#example2_wrapper .col-md-6:eq(0)' );
+				} );
+			</script>
 
 
 @endsection

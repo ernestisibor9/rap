@@ -2,7 +2,9 @@
 
 @section('main')
 
-
+@section('title')
+	RAP - Praise Night 1
+@endsection
 
   <div class="content-wrapper">
     <h6 class="mb-0 text-uppercase">Praise Night One</h6>
@@ -28,7 +30,7 @@
 										<td>{{ $item->title }}</td>
 										<td><a href="{{ route('view.pdf', $item->id) }}">{{ Str::substr($item->pdf_file, 0, 30) }}...</a></td>
 										<td>{{ Str::substr($item->content, 0, 30) }}
-											<a href="{{ route('full.content', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
+											<a href="{{ route('full.content2', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
 										</td>
 										{{-- <td><a href="{{ route('view.pdf', $item->id) }}" class="btn btn-success">View</a></td> --}}
 									</tr>

@@ -59,8 +59,8 @@
 										</td>
 										<td>{{ Carbon\Carbon::parse($item->date_upload)->format('l M d Y') }}</td>
                     <td>
-                      <button class="btn btn-primary">Edit</button>
-                      <button class="btn btn-danger">Delete</button>
+                      <a href="{{ route('edit.search', $item->id) }}" class="btn btn-primary">Edit</a>
+                      <a href="{{ route('delete.search', $item->id) }}" class="btn btn-danger" id="delete" title="Delete Data">Delete</a>
                     </td>
 									</tr>
 									@endforeach

@@ -123,7 +123,7 @@
 										<td>{{ $item->christmas }}</td>
 										<td>{{ Str::substr($item->pdf_file, 0, 30) }}...</td>
 										<td>{{ Str::substr($item->content, 0, 60) }}
-											<a href="{{ route('all.content', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
+											<a href="{{ route('all.content5', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
 										</td>
 										{{-- <td>{{ $item->date_upload }}</td> --}}
 										{{-- <td>{{ $item->date_upload->format('l M d Y') }}</td> --}}

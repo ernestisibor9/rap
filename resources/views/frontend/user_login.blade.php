@@ -17,57 +17,59 @@
   <link rel="stylesheet" href="{{asset('frontend/css/vertical-layout-light/style.css')}}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{asset('frontend/images/favicon.png')}}" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  </script>
 </head>
 
 <body>
-  <div class="container-scroller">
-    <div class="container-fluid page-body-wrapper full-page-wrapper">
-      <div class="content-wrapper d-flex align-items-center auth px-0">
-        <div class="row w-100 mx-0">
-          <div class="col-lg-4 mx-auto">
-            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-              <div class="brand-logo">
-                <img src="{{asset('frontend/images/logo.svg')}}" alt="logo">
+  <div class="container mt-5">
+    <div class="row d-flex justify-content-center" style="margin-right:50px; margin-left:50px;">    
+        <div class="col-md-7">
+          <div class="card mb-2">
+            <img src="{{ asset('frontend/images/pastorchris.jpg') }}" alt="" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="card shadow">
+            <div class="card-body">
+              {{-- <img src="{{ asset('frontend/images/logo-icon2.png') }}" alt=""> --}}
+              <div class="text-center">
+                <img src="{{ asset('frontend/images/logo-icon2.png') }}" alt="">
+                <h5>Rehearsal Archival Portal</h5>
+                <h5 class="create">Login</h5>
+                <!-- <h3>school account</h3> -->
+                <p class="small-text">Sign in to continue</p>
               </div>
-              <h4>Hello! let's get started</h4>
-              <h6 class="font-weight-light">Sign in to continue.</h6>
-              <form method="POST" action="{{ route('login') }}" class="">
-                    @csrf
-                <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" name="email" id="exampleInputEmail1" placeholder="Email">
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" name="password" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="mt-3">
-                  <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>
-                </div>
-                <div class="my-2 d-flex justify-content-between align-items-center">
-                  {{-- <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      Keep me signed in
-                    </label>
-                  </div> --}}
-                  <a href="#" class="auth-link text-black">Forgot password?</a>
-                  <a href="{{ route('admin.login') }}" class="auth-link text-black">Admin Login</a>
-                </div>
-                {{-- <div class="mb-2">
-                  <button type="button" class="btn btn-block btn-facebook auth-form-btn">
-                    <i class="ti-facebook mr-2"></i>Connect using facebook
-                  </button>
-                </div>
-                <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="register.html" class="text-primary">Create</a>
-                </div> --}}
-              </form>
+              <div>
+                <form action="{{ route('login') }}" method="post">
+                  @csrf
+                  <div class="mb-3">
+                    <label for="" class="form-label">Email address</label>
+                    <input type="email" name="email" class="form-control" id="" placeholder="info@rap.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="" placeholder="password">
+                  </div>
+                  <div class="d-grid gap-2 mb-2">
+                    <button class="btn btn-primary" type="submit">Login</button>
+                  </div>
+                  <div class="text-center">
+                    <p>Click here to login as an<span> <a href="{{ route('admin.login') }}" class="link"> Admin</a></span></p>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- content-wrapper ends -->
+      
     </div>
-    <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->

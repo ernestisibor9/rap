@@ -2,7 +2,9 @@
 
 @section('main')
 
-
+@section('title')
+	RAP - Search Directory
+@endsection
 
   <div class="content-wrapper">
 

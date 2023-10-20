@@ -7,7 +7,11 @@ use App\Http\Controllers\LyricsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SongController;
+use App\Http\Controllers\UserChristmasController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserDashboardController;
+use App\Http\Controllers\UserHealingStreamController;
+use App\Http\Controllers\UserLyricsController;
 use App\Http\Controllers\UserPraiseNightController;
 use App\Http\Controllers\UserSearchController;
 use App\Http\Middleware\AdminRole;
@@ -37,6 +41,8 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth', 'roles:user'])->group(function(){
     Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout');
+
+    // Praise Night
     Route::get('/user/praise/night/select', [UserPraiseNightController::class, 'PraiseNightSelect'])->name('praise_night_select');
     Route::get('/user/praise/night/1', [UserPraiseNightController::class, 'PraiseNight1'])->name('praise.night.1');
     Route::get('/user/praise/night/2', [UserPraiseNightController::class, 'PraiseNight2'])->name('praise.night.2');
@@ -50,7 +56,38 @@ Route::middleware(['auth', 'roles:user'])->group(function(){
     Route::get('/user/praise/night/10', [UserPraiseNightController::class, 'PraiseNight10'])->name('praise.night.10');
     Route::get('/user/praise/night/11', [UserPraiseNightController::class, 'PraiseNight11'])->name('praise.night.11');
     Route::get('/viewpdf/doc/{id}', [UserPraiseNightController::class, 'ViewPdf'])->name('view.pdf');
-    Route::get('/praise/night/full/content/{id}', [UserPraiseNightController::class, 'FullContent'])->name('full.content');
+    Route::get('/praise/night/full/content/{id}', [UserPraiseNightController::class, 'FullContent'])->name('full.content2');
+
+    // Healing Stream
+    Route::get('/user/healing/stream/select', [UserHealingStreamController::class, 'HealingStreamSelect'])->name('healing_stream_select');
+    Route::get('/user/healing/stream/2020', [UserHealingStreamController::class, 'HealingStream2020'])->name('healing.stream.2020');
+    Route::get('/user/healing/stream/2021', [UserHealingStreamController::class, 'HealingStream2021'])->name('healing.stream.2021');
+    Route::get('/user/healing/stream/2022', [UserHealingStreamController::class, 'HealingStream2022'])->name('healing.stream.2022');
+    Route::get('/user/healing/stream/2023', [UserHealingStreamController::class, 'HealingStream2023'])->name('healing.stream.2023');
+    Route::get('/user/healing/stream/2024', [UserHealingStreamController::class, 'HealingStream2024'])->name('healing.stream.2024');
+    Route::get('/user/healing/stream/2025', [UserHealingStreamController::class, 'HealingStream2025'])->name('healing.stream.2025');
+    Route::get('/user/healing/stream/2026', [UserHealingStreamController::class, 'HealingStream2026'])->name('healing.stream.2026');
+    Route::get('/user/healing/stream/2027', [UserHealingStreamController::class, 'HealingStream2027'])->name('healing.stream.2027');
+    Route::get('/user/healing/stream/month', [UserHealingStreamController::class, 'HealingStreamMonth'])->name('healing.stream.month');
+    Route::get('/user/healing/stream/march', [UserHealingStreamController::class, 'HealingStreamMarch'])->name('healing.stream.march');
+    Route::get('/user/healing/stream/july', [UserHealingStreamController::class, 'HealingStreamJuly'])->name('healing.stream.july');
+    Route::get('/user/healing/stream/october', [UserHealingStreamController::class, 'HealingStreamOctober'])->name('healing.stream.october');
+    Route::get('/view/pdf/doc/{id}', [UserHealingStreamController::class, 'ViewPdf2'])->name('view2.pdf');
+    Route::get('/healing/stream/full/content/{id}', [UserHealingStreamController::class, 'FullContent2'])->name('full.content');
+
+    // Lyrics
+    Route::get('/user/lyrics', [UserLyricsController::class, 'LyricsSelect'])->name('lyrics');
+    Route::get('/lyrics/full/content/{id}', [UserLyricsController::class, 'FullContent3'])->name('full.content3');
+    Route::get('/single/lyrics/{title}', [UserLyricsController::class, 'SingleLyrics'])->name('single.lyrics');
+
+    // Christmas 
+    Route::get('/user/christmas', [UserChristmasController::class, 'ChristmasSelect'])->name('christmas_select');
+    Route::get('/viewpdfchristmas/doc/{id}', [UserChristmasController::class, 'ViewPdfChristmas'])->name('view4.pdf');
+    Route::get('/christmas/full/content/{id}', [UserChristmasController::class, 'FullContent4'])->name('full.content4');
+
+    // Dashboard
+    Route::get('/user/dashboard/minutes', [UserDashboardController::class, 'UserDirectory'])->name('user_directory');
+
     
     // Search 
     Route::get('/user/search/directory', [UserSearchController::class, 'SearchDirectory'])->name('user.search');
@@ -77,6 +114,7 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
     Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
     Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
     Route::post('/admin/profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
+    Route::post('/admin/profile/store/update', [AdminController::class, 'AdminProfileStore2'])->name('admin.profile.store2');
     Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
     Route::post('/admin/profile/update', [AdminController::class, 'AdminProfileUpdate'])->name('admin.profile.update');
 
@@ -88,6 +126,9 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
         Route::get('/search/manage', 'SearchManage')->name('search.manage');
         Route::get('/search/directory/{id}', 'AllContent')->name('all.content3');
         Route::post('/search/directory/item', 'SearchDirectoryItem')->name('search.directory.item');
+        Route::get('/edit/search/directory/{id}', 'EditSearch')->name('edit.search');
+        Route::post('/update/search/directory', 'UpdateSearch')->name('search.update');
+        Route::get('/delete/search/directory/{id}', 'DeleteSearch')->name('delete.search');
     });
 
 
@@ -120,6 +161,7 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
         Route::post('/praise/night/update', 'UpdatePraiseNight')->name('praise.night.update');
         Route::get('/delete/praise/night/{id}', 'DeletePraiseNight')->name('delete.praise.night');
         Route::get('/praise/night/all/content/{id}', 'AllContent')->name('all.content');
+        Route::get('/christmas/all/content/{id}', 'AllContent5')->name('all.content5');
         Route::get('/healing/stream/all/content/{id}', 'AllHealingContent')->name('all.healing.content');
         Route::get('/view/doc/{id}', 'ViewDoc')->name('view.doc');
         Route::get('/view/doc2/{id}', 'ViewDoc2')->name('view.doc2');

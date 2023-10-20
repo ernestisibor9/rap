@@ -2,7 +2,9 @@
 
 @section('main')
 
-
+@section('title')
+	RAP - Praise Night 6
+@endsection
 
   <div class="content-wrapper">
     <h6 class="mb-0 text-uppercase">Praise Night Six</h6>
@@ -18,7 +20,6 @@
 										<th>Title</th>
 										<th>Uploaded PDF Doc</th>									
 										<th>Content</th>
-										<th>Created At</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -29,7 +30,7 @@
 										<td>{{ $item->title }}</td>
 										<td><a href="{{ route('view.pdf', $item->id) }}">{{ Str::substr($item->pdf_file, 0, 30) }}...</a></td>
 										<td>{{ Str::substr($item->content, 0, 30) }}
-											<a href="{{ route('full.content', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
+											<a href="{{ route('full.content2', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
 										</td>
 									</tr>
 									@endforeach

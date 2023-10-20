@@ -30,7 +30,7 @@
 										<label for="input42" class="col-sm-3 col-form-label">Content</label>
 										<div class="col-sm-9">
 											<div class="position-relative input-icon">
-												<textarea name="content">{{ $christmasEdit->content }}</textarea>
+												<textarea name="content">{!! $christmasEdit->content !!}</textarea>
 												<span class="position-absolute top-50 translate-middle-y"><i class='bx bx-paper-clip'></i></span>
 											</div>
 										</div>

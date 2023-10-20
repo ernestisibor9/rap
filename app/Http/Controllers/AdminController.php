@@ -38,31 +38,31 @@ class AdminController extends Controller
         return view('admin.admin_profile', compact('profileData'));
     }
     // Admin Profile Store
-    public function AdminProfileStore(Request $request){
-			 $request->validate([
-            'photo' => 'required|mimes:jpeg, png, pdf, jpg, gif'
-        ]);
-			$id = Auth::user()->id;
-			$data = User::find($id);
-			$data->name = $request->name;
-			$data->email = $request->email;
+    // public function AdminProfileStore(Request $request){
+		// 	 $request->validate([
+    //         'photo' => 'required|mimes:jpeg, png, pdf, jpg, gif'
+    //     ]);
+		// 	$id = Auth::user()->id;
+		// 	$data = User::find($id);
+		// 	$data->name = $request->name;
+		// 	$data->email = $request->email;
 
-			if($request->file('photo')){
-				$file =	$request->file('photo'); 
-				@unlink(public_path('upload/admin_images/'.$data->photo));
-				$filename = date('YmdHi').$file->getClientOriginalExtension();
-				$file->move(public_path('upload/admin_images'), $filename);
-				$data['photo'] = $filename;
-			}
-			$data->save();
+		// 	if($request->file('photo')){
+		// 		$file =	$request->file('photo'); 
+		// 		@unlink(public_path('upload/admin_images/'.$data->photo));
+		// 		$filename = date('YmdHi').$file->getClientOriginalExtension();
+		// 		$file->move(public_path('upload/admin_images'), $filename);
+		// 		$data['photo'] = $filename;
+		// 	}
+		// 	$data->save();
 
-			$notification = array(
-				'message'=> 'Admin Profile Updated Successfully',
-				'alert-type'=>'success'
-			);
+		// 	$notification = array(
+		// 		'message'=> 'Admin Profile Updated Successfully',
+		// 		'alert-type'=>'success'
+		// 	);
 
-			return redirect()->back()->with($notification);
-    }
+		// 	return redirect()->back()->with($notification);
+    // }
     // Admin Change Password Page
     public function AdminChangePassword(){
 		$id = Auth::user()->id;
@@ -97,4 +97,37 @@ class AdminController extends Controller
 			);
 			return redirect()->back()->with($notification);
 		}
+
+		public function AdminProfileStore(Request $request){
+        $id = Auth::user()->id;
+        
+        if($request->file('photo')){
+				$file =	$request->file('photo'); 
+				@unlink(public_path('upload/admin_images/'.$file));
+				$filename = date('YmdHi').$file->getClientOriginalExtension();
+				$file->move(public_path('upload/admin_images'), $filename);
+
+            User::findOrFail($id)->update([
+                'name' => $request->name,
+								'email' => $request->email,
+                'photo' => $filename,
+            ]);
+            $notification = array(
+            'message'=> 'Admin updated successfully ',
+            'alert-type'=>'success'
+            );
+            return redirect()->back()->with($notification);
+        }
+        else{
+            User::findOrFail($id)->update([
+                'name' => $request->name,
+								'email' => $request->email,
+            ]);
+            $notification = array(
+            'message'=> 'Admin updated successfully',
+            'alert-type'=>'success'
+            );
+            return redirect()->back()->with($notification);
+        }
+    }
 }

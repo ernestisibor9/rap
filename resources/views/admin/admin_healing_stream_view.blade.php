@@ -80,9 +80,9 @@
                                 <div class="col-sm-9">
                                   <select class="form-select" name="healing_stream" id="input46">
                                     <option selected>Select healing stream </option>
-                                    <option value="healing_stream_march">March</option>
-                                    <option value="healing_stream_july">July</option>
-                                    <option value="healing_stream_october">October</option>
+                                    <option value="march">March</option>
+                                    <option value="july">July</option>
+                                    <option value="october">October</option>
                                     </select>
                                 </div>
                               </div>

@@ -46,7 +46,7 @@
 				  <div class="col">
 					<div class="card radius-10 border-start border-0 border-4 border-success">
 					   <div class="card-body">
-							<a href = "{{ route('admin.add.song') }}">
+							<a href = "#">
 						   <div class="d-flex align-items-center">
 							   <div>
 								   <p class="mb-0 text-secondary">Upload List of</p>
@@ -63,7 +63,7 @@
 				  <div class="col">
 					<div class="card radius-10 border-start border-0 border-4 border-warning">
 					   <div class="card-body">
-							<a href = "{{ route('admin.add.leader') }}">
+							<a href = "#">
 						   <div class="d-flex align-items-center">
 							   <div>
 								   <p class="mb-0 text-secondary">Upload Lead</p>

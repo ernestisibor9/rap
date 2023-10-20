@@ -37,7 +37,7 @@
 										<th>Uploaded PDF Doc</th>									
 										<th>Content</th>
 										<th>Created At</th>
-                    <th>Action</th>
+                    {{-- <th>Action</th> --}}
 									</tr>
 								</thead>
 								<tbody>
@@ -51,10 +51,10 @@
 											<a href="{{ route('all.content3', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
 										</td>
 										<td>{{ Carbon\Carbon::parse($item->date_upload)->format('l M d Y') }}</td>
-                    <td>
+                    {{-- <td>
                       <button class="btn btn-primary">Edit</button>
                       <button class="btn btn-danger">Delete</button>
-                    </td>
+                    </td> --}}
 									</tr>
 									@endforeach
 								</tbody>

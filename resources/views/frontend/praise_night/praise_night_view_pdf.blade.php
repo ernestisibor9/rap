@@ -2,9 +2,9 @@
 
 @section('main')
 
-{{-- @section('title')
+@section('title')
 	RAP - View PDF Document
-@endsection --}}
+@endsection
     
 
   <div class="content-wrapper">
