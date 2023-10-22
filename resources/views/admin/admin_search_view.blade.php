@@ -17,8 +17,11 @@
               @csrf
                 <div class = "col-md-6 d-flex justify-content-center">
                   <div class="position-relative input-icon">
-                  <input type="text" name="search" class="form-control" id="input15" placeholder="Search Directory">
+                  <input type="text" name="search" class="form-control @error('search')is-invalid @enderror" id="input15" placeholder="Search Directory">
                   <span class="position-absolute top-50 translate-middle-y"><i class='bx bx-search'></i></span>
+											@error('search')
+                        <span class="text-danger">{{ $message }}</span>
+                      @enderror
                 </div>
                 <div>
                   <button type="submit" class="btn btn-primary" style="margin-left: 30px">Search</button>
@@ -59,6 +62,7 @@
 										</td>
 										<td>{{ Carbon\Carbon::parse($item->date_upload)->format('l M d Y') }}</td>
                     <td>
+											<a href="{{ route('view.doc4', $item->id) }}" class="btn btn-success">View</a>
                       <a href="{{ route('edit.search', $item->id) }}" class="btn btn-primary">Edit</a>
                       <a href="{{ route('delete.search', $item->id) }}" class="btn btn-danger" id="delete" title="Delete Data">Delete</a>
                     </td>

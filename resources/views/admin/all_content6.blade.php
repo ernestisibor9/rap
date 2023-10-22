@@ -15,7 +15,7 @@
             </div>
             <div class="col-md-10">
               <h4 class="text-center">{{ $contentData->title }}</h4>
-              <p class="p-2" style="line-height: 25px; text-align:justify">{!! $contentData->content !!}</p>
+              <p class="p-2" style="line-height: 25px; text-align:justify">{!! $contentData->lyrics !!}</p>
             </div>
           </div>
         </div>

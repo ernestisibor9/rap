@@ -53,6 +53,16 @@ class UserHealingStreamController extends Controller
         $healing_stream_2027 = HealingStream::where('year', '2027')->latest()->get();
         return view('frontend.healing_stream.healing_stream_2027', compact('healing_stream_2027'));
     }
+    // Healing Stream 2028
+    public function HealingStream2028(){
+        $healing_stream_2028 = HealingStream::where('year', '2028')->latest()->get();
+        return view('frontend.healing_stream.healing_stream_2028', compact('healing_stream_2028'));
+    }
+    // Healing Stream 2029
+    public function HealingStream2029(){
+        $healing_stream_2029 = HealingStream::where('year', '2029')->latest()->get();
+        return view('frontend.healing_stream.healing_stream_2029', compact('healing_stream_2029'));
+    }
     // healing Stream Month
     public function HealingStreamMonth(){
         $healing_stream_month = HealingStream::latest()->get();

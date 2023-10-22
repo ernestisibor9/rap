@@ -3,7 +3,7 @@
 @section('admin')
 
 @section('title')
-	RAP - Edit Healing Stream
+	RAP - Edit Healing Streams
 @endsection
 
 <div class="page-content">
@@ -11,7 +11,7 @@
 <div class="card">
 	
 							<div class="card-body p-4">
-								<h5 class="mb-4">Edit Healing Stream</h5>
+								<h5 class="mb-4">Edit Healing Streams</h5>
 								<form action="{{ route('healing.stream.update') }}" method="POST" enctype="multipart/form-data">
 											@csrf
                       <input class="form-control" type="hidden" name="id" id="id" value="{{$healingStreamEdit->id}}">
@@ -63,8 +63,7 @@
 										<label class="col-sm-3 col-form-label"></label>
 										<div class="col-sm-9">
 											<div class="d-md-flex d-grid align-items-center gap-3">
-												<button type="submit" class="btn btn-primary px-4">Submit</button>
-												<button type="button" class="btn btn-light px-4">Reset</button>
+												<button type="submit" class="btn btn-primary px-4">Update</button>
 											</div>
 										</div>
 									</div>

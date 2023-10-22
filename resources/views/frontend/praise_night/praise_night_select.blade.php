@@ -40,7 +40,7 @@
 										<td><a href="{{ route('praise.night.9') }}">Praise Night 9</a></td>
 										<td><a href="{{ route('praise.night.10') }}">Praise Night 10</a></td>
 										<td><a href="{{ route('praise.night.11') }}">Praise Night 11</a></td>
-                    <td><a href="">Praise Night 12</a></td>
+                    <td><a href="{{ route('praise.night.12') }}">Praise Night 12</a></td>
                     <td><a href="">Praise Night 13</a></td>
                     <td><a href="">Praise Night 14</a></td>
                     <td><a href="">Praise Night 15</a></td>

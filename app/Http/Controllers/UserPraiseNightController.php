@@ -67,6 +67,11 @@ class UserPraiseNightController extends Controller
         $praise_night_eleven = PraiseNight::where('praise_night', 'praise_night_11')->latest()->get();
         return view('frontend.praise_night.praise_night_11', compact('praise_night_eleven'));
     }
+    // Praise Night Twelve
+    public function PraiseNight12(){
+        $praise_night_twelve = PraiseNight::where('praise_night', 'praise_night_12')->latest()->get();
+        return view('frontend.praise_night.praise_night_12', compact('praise_night_twelve'));
+    }
      // View Doc
     public function ViewPdf($id){
         $docs = PraiseNight::findOrFail($id);

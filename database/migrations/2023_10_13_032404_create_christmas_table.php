@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('christmas')->nullable();
             $table->date('date_upload')->nullable();
             $table->string('pdf_file')->nullable();
-            $table->text('content')->nullable();
+            $table->longText('content')->nullable();
             $table->timestamps();
         });
     }

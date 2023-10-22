@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('lyrics', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
-            $table->text('lyrics')->nullable();
+            $table->longText('lyrics')->nullable();
             $table->timestamps();
         });
     }

@@ -89,7 +89,7 @@
         <div class="col-md-6 stretch-card transparent">
           <div class="card card-light-danger">
             <div class="card-body">
-              <a href="{{ route('user.dashboard') }}" style="text-decoration: none; color: white; font-weight:bold;">
+              <a href="{{ route('lyrics') }}" style="text-decoration: none; color: white; font-weight:bold;">
                 <p class="mb-4"></p>
                 <p class="fs-30 mb-2">Lyrics</p>
                 <p>Directory</p>

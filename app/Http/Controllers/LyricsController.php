@@ -17,6 +17,11 @@ class LyricsController extends Controller
 
     // Store Lyrics
     public function LyricsStore(Request $request){
+       $request->validate([
+            'title' => 'required',
+            'lyrics' => 'required',
+        ]);
+
         Lyrics::insert([
             'title' => $request->title,
             'lyrics' => $request->lyrics,
@@ -26,7 +31,7 @@ class LyricsController extends Controller
             'message'=> 'Lyrics Added successfully',
             'alert-type'=>'success'
         );
-        return redirect()->back()->with($notification);
+        return redirect()->route('admin.manage.lyrics')->with($notification);
     }
     // Route to manage lyrics
     public function LyricsManage(){
@@ -61,8 +66,13 @@ class LyricsController extends Controller
             'message'=> 'Christmas service deleted successfully',
             'alert-type'=>'success'
         );
-        return redirect()->back()->with($notification);
+       return redirect()->back()->with($notification);
+    }
 
+    // Lyrics content
+    public function LyricsContent($id){
+        $contentData = Lyrics::findOrFail($id);
+        return view('admin.all_content6', compact('contentData'));
     }
 
 }

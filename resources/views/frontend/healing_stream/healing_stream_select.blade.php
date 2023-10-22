@@ -3,11 +3,11 @@
 @section('main')
 
 @section('title')
-	RAP - Healing Stream 
+	RAP - Healing Streams 
 @endsection
 
   <div class="content-wrapper">
-    <h6 class="mb-0 text-uppercase">Select Healing Stream </h6>
+    <h6 class="mb-0 text-uppercase">Select Healing Streams Year </h6>
 				<hr/>
 				<div class="card">
 					<div class="card-body">
@@ -15,14 +15,14 @@
 							<table id="example" class="table table-striped table-bordered" style="width:100%">
 								<thead>
 									<tr>
-										<th>Healing Stream</th>
-										<th>Healing Stream</th>	
-										<th>Healing Stream</th>
-										<th>Healing Stream</th>									
-										<th>Healing Stream</th>
-										<th>Healing Stream</th>
-                    <th>Healing Stream</th>
-                    <th>Healing Stream</th>
+										<th>Healing Streams</th>
+										<th>Healing Streams</th>	
+										<th>Healing Streams</th>
+										<th>Healing Streams</th>									
+										<th>Healing Streams</th>
+										<th>Healing Streams</th>
+                    <th>Healing Streams</th>
+                    <th>Healing Streams</th>
 									</tr>
 								</thead>
 								<tbody>								
@@ -37,7 +37,7 @@
                     <td><a href="{{ route('healing.stream.2027') }}">2027</a></td>
 									</tr>
                   <tr>
-										<td><a href="">2028</a></td>
+										<td><a href="{{ route('healing.stream.2028') }}">2028</a></td>
 										<td><a href="">2029</a></td>
 										<td><a href="">2030</a></td>
                     <td><a href="">2031</a></td>

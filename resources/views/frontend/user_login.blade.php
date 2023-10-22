@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Skydash Admin</title>
+  <title>RAP - Login</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{asset('frontend/vendors/feather/feather.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/vendors/ti-icons/css/themify-icons.css')}}">
@@ -29,13 +29,13 @@
 
 <body>
   <div class="container mt-5">
-    <div class="row d-flex justify-content-center" style="margin-right:50px; margin-left:50px;">    
-        <div class="col-md-7">
+    <div class="row d-flex justify-content-center">    
+        <div class="col-md-7 col-sm-4 d-none d-md-block">
           <div class="card mb-2">
             <img src="{{ asset('frontend/images/pastorchris.jpg') }}" alt="" class="img-fluid">
           </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-5 col-sm-8">
           <div class="card shadow">
             <div class="card-body">
               {{-- <img src="{{ asset('frontend/images/logo-icon2.png') }}" alt=""> --}}
@@ -51,16 +51,22 @@
                   @csrf
                   <div class="mb-3">
                     <label for="" class="form-label">Email address</label>
-                    <input type="email" name="email" class="form-control" id="" placeholder="info@rap.com">
+                    <input type="email" name="email" class="form-control @error('email')is-invalid @enderror" id="" placeholder="info@rap.com">
+                      @error('email')
+                        <span class="text-danger">{{ $message }}</span>
+                      @enderror
                   </div>
                   <div class="mb-3">
                     <label for="" class="form-label">Password</label>
-                    <input type="password" name="password" class="form-control" id="" placeholder="password">
+                    <input type="password" name="password" class="form-control @error('password')is-invalid @enderror" id="" placeholder="password">
+                      @error('password')
+                        <span class="text-danger">{{ $message }}</span>
+                      @enderror
                   </div>
                   <div class="d-grid gap-2 mb-2">
                     <button class="btn btn-primary" type="submit">Login</button>
                   </div>
-                  <div class="text-center">
+                  <div class="text-center" style="margin-bottom: -20px;">
                     <p>Click here to login as an<span> <a href="{{ route('admin.login') }}" class="link"> Admin</a></span></p>
                   </div>
                 </form>

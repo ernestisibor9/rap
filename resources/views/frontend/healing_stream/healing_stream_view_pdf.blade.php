@@ -3,7 +3,7 @@
 @section('main')
 
 @section('title')
-	RAP - Healing Stream View
+	RAP - Healing Streams View
 @endsection
     
 

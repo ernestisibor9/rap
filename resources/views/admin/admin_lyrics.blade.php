@@ -16,13 +16,19 @@
 									<div class="row mb-3">
 										<label for="input46" class="col-sm-3 col-form-label">Title</label>
 										<div class="col-sm-9">
-											<input type="text" name="title" class="form-control" id="" placeholder="Title of song written by ">
+											<input type="text" name="title" class="form-control @error('title')is-invalid @enderror" id="" placeholder="Title of song written by ">
+												@error('title')
+                        <span class="text-danger">{{ $message }}</span>
+                      	@enderror
 										</div>
 									</div>
                   <div class="row mb-3">
 										<label for="input47" class="col-sm-3 col-form-label">Lyrics</label>
 										<div class="col-sm-9">
-											<textarea class="form-control" name="lyrics" id="input47" rows="3" placeholder="Song Lyrics"></textarea>
+											<textarea class="form-control @error('lyrics')is-invalid @enderror" name="lyrics" id="input47" rows="3" placeholder="Song Lyrics"></textarea>
+												@error('lyrics')
+                        <span class="text-danger">{{ $message }}</span>
+                      	@enderror
 										</div>
 									</div>
 									<div class="row">

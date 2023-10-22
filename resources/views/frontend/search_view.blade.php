@@ -12,7 +12,10 @@
               @csrf
                 <div class = "col-md-6 d-flex justify-content-center">
                   <div class="mr-3">
-                    <input type="text" name="search" placeholder="Search Directory" id="" class="form-control">
+                    <input type="text" name="search" placeholder="Search Directory" id="" class="form-control @error('search')is-invalid @enderror">
+											@error('search')
+                        <span class="text-danger">{{ $message }}</span>
+                      @enderror
                   </div>
                   <button type="submit" class="btn btn-primary">Search</button>
                 </div>

@@ -3,7 +3,7 @@
 @section('admin')
 
 @section('title')
-	RAP - Healing Stream View
+	RAP - Healing Streams View
 @endsection
     
 
@@ -15,7 +15,7 @@
 							<a href="{{ route('healing_stream_march') }}">
 							<div class="d-flex align-items-center">
 								<div>
-									<p class="mb-0 text-secondary">Healing Stream</p>
+									<p class="mb-0 text-secondary">Healing Streams</p>
 									<h4 class="my-1 text-info">MARCH</h4>
 									<p class="mb-0 font-13"></p>
 								</div>
@@ -32,7 +32,7 @@
 							<a href = "{{ route('healing_stream_july') }}">
 						   <div class="d-flex align-items-center">
 							   <div>
-								   <p class="mb-0 text-secondary">Healing Stream</p>
+								   <p class="mb-0 text-secondary">Healing Streams</p>
 								   <h4 class="my-1 text-danger">JULY</h4>
 								   <p class="mb-0 font-13"></p>
 							   </div>
@@ -49,7 +49,7 @@
 							<a href = "{{ route('healing_stream_october') }}">
 						   <div class="d-flex align-items-center">
 							   <div>
-								   <p class="mb-0 text-secondary">Healing Stream</p>
+								   <p class="mb-0 text-secondary">Healing Streams</p>
 								   <h4 class="my-1 text-success">OCTOBER</h4>
 								   <p class="mb-0 font-13"></p>
 							   </div>
@@ -68,7 +68,7 @@
 											<div class="modal-dialog modal-lg p-2">
 												<div class="modal-content">
 													<div class="modal-header">
-														<h5 class="modal-title">Healing Stream</h5>
+														<h5 class="modal-title">Healing Streams</h5>
 														<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 													</div>
 													<div class="modal-body">
@@ -76,20 +76,23 @@
                                   @csrf
                               
                               <div class="row mb-3">
-                                <label for="input46" class="col-sm-3 col-form-label">Healing Stream</label>
+                                <label for="input46" class="col-sm-3 col-form-label">Healing Streams</label>
                                 <div class="col-sm-9">
-                                  <select class="form-select" name="healing_stream" id="input46">
-                                    <option selected>Select healing stream </option>
+                                  <select class="form-select @error('healing_stream')is-invalid @enderror" name="healing_stream" id="input46">
+                                    <option selected>Select healing streams </option>
                                     <option value="march">March</option>
                                     <option value="july">July</option>
                                     <option value="october">October</option>
-                                    </select>
+                                  </select>
                                 </div>
+																@error('healing_stream')
+																	<span class="text-danger">{{ $message }}</span>
+																@enderror
                               </div>
 															<div class="row mb-3">
                                 <label for="input46" class="col-sm-3 col-form-label">Select Year</label>
                                 <div class="col-sm-9">
-                                  <select class="form-select" name="year" id="input46">
+                                  <select class="form-select @error('year')is-invalid @enderror" name="year" id="input46">
                                     <option selected>Select Year </option>
                                     <option value="2030">2030</option>
                                     <option value="2029">2029</option>
@@ -102,20 +105,29 @@
 																		<option value="2022">2022</option>
 																		<option value="2021">2021</option>
 																		<option value="2020">2020</option>
-                                    </select>
+                                  </select>
                                 </div>
+																	@error('year')
+																		<span class="text-danger">{{ $message }}</span>
+																	@enderror
                               </div>
 															<div class="row mb-3">
 																<label for="input46" class="col-sm-3 col-form-label">Title</label>
 																<div class="col-sm-9">
-																	<input type="text" name="title" id="" class="form-control" placeholder="Title of song written by">
+																	<input type="text" name="title" id="" class="form-control @error('title')is-invalid @enderror" placeholder="Title of song written by">
+																	@error('title')
+																	<span class="text-danger">{{ $message }}</span>
+																	@enderror
 																</div>
 															</div>
 
                               <div class="row mb-3">
 																<label for="input46" class="col-sm-3 col-form-label">Date</label>
 																<div class="col-sm-9">
-																	<input type="date" name="date_upload" id="" class="form-control" placeholder="">
+																	<input type="date" name="date_upload" id="" class="form-control @error('date_upload')is-invalid @enderror" placeholder="">
+																	@error('date_upload')
+																	<span class="text-danger">{{ $message }}</span>
+																	@enderror
 																</div>
 															</div>
 
@@ -123,8 +135,11 @@
 																<label for="input42" class="col-sm-3 col-form-label">Upload PDF</label>
 																<div class="col-sm-9">
 																	<div class="position-relative input-icon">
-																		<input type="file" class="form-control" id="input42" name="pdf_file">
+																		<input type="file" class="form-control @error('pdf_file')is-invalid @enderror" id="input42" name="pdf_file">
 																		<span class="position-absolute top-50 translate-middle-y"><i class='bx bx-paper-clip'></i></span>
+																		@error('pdf_file')
+																		<span class="text-danger">{{ $message }}</span>
+																		@enderror
 																	</div>
 																</div>
 															</div>
@@ -146,7 +161,7 @@
                                 <label class="col-sm-3 col-form-label"></label>
                                 <div class="col-sm-9">
                                   <div class="d-md-flex d-grid align-items-center gap-3">
-                                    <button type="submit" class="btn btn-primary px-4">Add Healing Stream</button>
+                                    <button type="submit" class="btn btn-primary px-4">Add Healing Streams</button>
                        
                                   </div>
                                 </div>

@@ -3,7 +3,7 @@
 @section('admin')
 
 @section('title')
-	RAP - Healing Stream July
+	RAP - Healing Streams July
 @endsection
 
 
@@ -12,7 +12,7 @@
 
   </div>
 
-  <h6 class="mb-0 text-uppercase">Healing Stream July</h6>
+  <h6 class="mb-0 text-uppercase">Healing Streams July</h6>
   <hr />
   <div class="card">
     <div class="card-body">
@@ -21,7 +21,7 @@
 								<thead>
 									<tr>
 										<th>S/N</th>
-										<th>Healing Stream</th>
+										<th>Healing Streams</th>
 										<th>Title</th>
 										<th>Uploaded PDF</th>
 										<th>Content</th>

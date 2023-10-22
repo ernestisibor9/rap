@@ -24,7 +24,7 @@
               <th>TITLE</th>
               <th>LYRICS</th>
               <th>CREATED AT</th>
-              {{-- <th>ACTION</th> --}}
+              <th>ACTION</th>
             </tr>
           </thead>
           <tbody>
@@ -32,7 +32,9 @@
             <tr>
               <td>{{ $key + 1 }}</td>
               <td>{{ $item->title }}</td>
-              <td>{{ $item->lyrics }}</td>
+              <td>{{ Str::substr($item->lyrics, 0, 30) }}
+											<a href="{{ route('lyrics.content', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
+										</td>
               <td>{{ $item->created_at->format('l M d Y') }}</td>
               <td>
                 <a href="{{ route('manage.lyrics.edit', $item->id) }}" class="btn btn-primary">Edit</a>

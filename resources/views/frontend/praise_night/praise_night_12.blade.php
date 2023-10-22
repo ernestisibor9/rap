@@ -3,11 +3,11 @@
 @section('main')
 
 @section('title')
-	RAP - Praise Night 3
+	RAP - Praise Night 12
 @endsection
 
   <div class="content-wrapper">
-    <h6 class="mb-0 text-uppercase">Praise Night Three</h6>
+    <h6 class="mb-0 text-uppercase">Praise Night Twelve</h6>
 				<hr/>
 				<div class="card">
 					<div class="card-body">
@@ -24,7 +24,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									@foreach ($praise_night_three as $key => $item)
+									@foreach ($praise_night_twelve as $key => $item)
 									<tr>
 										<td>{{ $key + 1 }}</td>
 										<td>{{ $item->praise_night }}</td>

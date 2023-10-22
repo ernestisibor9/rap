@@ -3,7 +3,7 @@
 @section('main')
 
 @section('title')
-	RAP - Healing Stream Month
+	RAP - Healing Streams Month
 @endsection
 
 @php
@@ -63,7 +63,7 @@
           <div class="card card-tale">
             <div class="card-body">
               <a href="{{ route('healing.stream.march') }}" style="text-decoration: none; color: white; font-weight:bold;">
-                <p class="mb-4">Healing Stream</p>
+                <p class="mb-4">Healing Streams</p>
                 <p class="fs-30 mb-2">March</p>
                 <p></p>
               </a>
@@ -74,7 +74,7 @@
           <div class="card card-dark-blue">
             <div class="card-body">
               <a href="{{ route('healing.stream.july') }}" style="text-decoration: none; color: white; font-weight:bold;">
-                <p class="mb-4">Healing Stream</p>
+                <p class="mb-4">Healing Streams</p>
                 <p class="fs-30 mb-2">July</p>
                 <p></p>
               </a>
@@ -87,7 +87,7 @@
           <div class="card card-light-blue">
             <div class="card-body">
               <a href="{{ route('healing.stream.october') }}" style="text-decoration: none; color: white; font-weight:bold;">
-                <p class="mb-4">Healing Stream</p>
+                <p class="mb-4">Healing Streams</p>
                 <p class="fs-30 mb-2">October</p>
                 <p></p>
               </a>

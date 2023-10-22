@@ -20,7 +20,7 @@
 										<th>Title</th>
 										<th>Uploaded PDF Doc</th>									
 										<th>Content</th>
-										<th>Created At</th>
+										
 									</tr>
 								</thead>
 								<tbody>

@@ -258,6 +258,8 @@
 </script> --}}
 
 
+ {{-- <script src="https://cdn.tiny.cloud/1/bs6au1qu048pnog0s5m4f5jbdfqhbl6bx2k4cz9vnkhwhl25/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script> --}}
+
  <script src="https://cdn.tiny.cloud/1/bs6au1qu048pnog0s5m4f5jbdfqhbl6bx2k4cz9vnkhwhl25/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
  <script>

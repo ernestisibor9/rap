@@ -32,8 +32,8 @@
 										<label class="col-sm-3 col-form-label"></label>
 										<div class="col-sm-9">
 											<div class="d-md-flex d-grid align-items-center gap-3">
-												<button type="submit" class="btn btn-primary px-4">Submit</button>
-												<button type="button" class="btn btn-light px-4">Reset</button>
+												<button type="submit" class="btn btn-primary px-4">Update</button>
+												
 											</div>
 										</div>
 									</div>

@@ -38,7 +38,7 @@ class SearchController extends Controller
             'message'=> 'Search directory uploaded successfully',
             'alert-type'=>'success'
         );
-        return redirect()->back()->with($notification);
+        return redirect()->route('search.manage')->with($notification);
     }
     // Manage Search
     public function SearchManage(){
@@ -109,7 +109,11 @@ class SearchController extends Controller
             'alert-type'=>'success'
         );
         return redirect()->back()->with($notification);
-
+    }
+    // View PDF
+    public function ViewDoc4($id){
+        $docs = Search::findOrFail($id);
+        return view('admin.admin_search_view_pdf', compact('docs'));
     }
 
 }

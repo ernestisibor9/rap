@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('pdf_file')->nullable();
             $table->string('date_upload')->nullable();
             $table->string('title')->nullable();
-            $table->text('content')->nullable();
+            $table->longText('content')->nullable();
             // $table->string('days')->nullable();
             // $table->string('title')->nullable();
             // $table->string('leader')->nullable();

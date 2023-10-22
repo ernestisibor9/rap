@@ -3,12 +3,12 @@
 @section('main')
 
 @section('title')
-	RAP - Healing Stream March
+	RAP - Healing Streams March
 @endsection
 
 
 <div class="content-wrapper">
-    <h6 class="mb-0 text-uppercase">Healing Stream March</h6>
+    <h6 class="mb-0 text-uppercase">Healing Streams March</h6>
   <hr />
   <div class="card">
     <div class="card-body">
@@ -17,7 +17,7 @@
 								<thead>
 									<tr>
 										<th>S/N</th>
-										<th>Healing Stream</th>
+										<th>Healing Streams</th>
                     <th>Year</th>
 										<th>Title</th>
 										<th>Uploaded PDF</th>
