@@ -17,11 +17,37 @@
 									<div class="row mb-3">
 										<label for="input46" class="col-sm-3 col-form-label">Praise Night</label>
 										<div class="col-sm-9">
-											<select class="form-select" name="praise_night" id="input46">
+											<select class="form-select" name="praise_night_type" id="input46">
 												
 												@foreach($praiseNightView as $praise)
-												<option value="{{ $praise->praise_night }}" {{ $praiseEdit->praise_night === $praise->praise_night ? 'selected' : '' }}>{{ $praise->praise_night }}</option>
+												<option value="{{ $praise->praise_night_type }}" {{ $praiseEdit->praise_night_type === $praise->praise_night_type ? 'selected' : '' }}>{{ $praise->praise_night_type }}</option>
 												@endforeach
+												<option value="praise_night_1">Praise Night 1</option>
+												<option value="praise_night_2">Praise Night 2</option>
+												<option value="praise_night_3">Praise Night 3</option>
+												<option value="praise_night_4">Praise Night 4</option>
+												<option value="praise_night_5">Praise Night 5</option>
+												<option value="praise_night_6">Praise Night 6</option>
+												<option value="praise_night_7">Praise Night 7</option>
+												<option value="praise_night_8">Praise Night 8</option>
+												<option value="praise_night_9">Praise Night 9</option>
+												<option value="praise_night_10">Praise Night 10</option>
+												<option value="praise_night_11">Praise Night 11</option>
+												<option value="praise_night_12">Praise Night 12</option>
+												<option value="praise_night_13">Praise Night 13</option>
+												<option value="praise_night_14">Praise Night 14</option>
+												<option value="praise_night_15">Praise Night 15</option>
+												<option value="praise_night_16">Praise Night 16</option>
+												<option value="praise_night_17">Praise Night 17</option>
+												<option value="praise_night_18">Praise Night 18</option>
+												<option value="praise_night_19">Praise Night 19</option>
+												<option value="praise_night_20">Praise Night 20</option>
+												<option value="praise_night_3">Praise Night 21</option>
+												<option value="praise_night_1">Praise Night 22</option>
+												<option value="praise_night_2">Praise Night 23</option>
+												<option value="praise_night_3">Praise Night 24</option>
+												<option value="praise_night_1">Praise Night 25</option>
+												<option value="praise_night_2">Praise Night 26</option>
 											</select>
 										</div>
 									</div>

@@ -11,50 +11,23 @@
 				<hr/>
 				<div class="card">
 					<div class="card-body">
-						<div class="table-responsive">
-							<table id="example" class="table table-striped table-bordered" style="width:100%">
-								<thead>
-									<tr>
-										<th>Healing Streams</th>
-										<th>Healing Streams</th>	
-										<th>Healing Streams</th>
-										<th>Healing Streams</th>									
-										<th>Healing Streams</th>
-										<th>Healing Streams</th>
-                    <th>Healing Streams</th>
-                    <th>Healing Streams</th>
-									</tr>
-								</thead>
-								<tbody>								
-									<tr>
-										<td><a href="{{ route('healing.stream.2020') }}">2020</a></td>
-										<td><a href="{{ route('healing.stream.2021') }}">2021</a></td>
-										<td><a href="{{ route('healing.stream.2022') }}">2022</a></td>
-                    <td><a href="{{ route('healing.stream.2023') }}">2023</a></td>
-                    <td><a href="{{ route('healing.stream.2024') }}">2024</a></td>
-                    <td><a href="{{ route('healing.stream.2025') }}">2025</a></td>
-                    <td><a href="{{ route('healing.stream.2026') }}">2026</a></td>
-                    <td><a href="{{ route('healing.stream.2027') }}">2027</a></td>
-									</tr>
-                  <tr>
-										<td><a href="{{ route('healing.stream.2028') }}">2028</a></td>
-										<td><a href="">2029</a></td>
-										<td><a href="">2030</a></td>
-                    <td><a href="">2031</a></td>
-                    <td><a href="">2032</a></td>
-                    <td><a href="">2033</a></td>
-                    <td><a href="">2034</a></td>
-                    <td><a href="">2035</a></td>
-									</tr>
-								</tbody>
-							</table>
+						<div class="col-md-6">
+							<select onchange="window.location.href=this.value;" class="form-select" name="praise_night" id="input46">
+							<option selected>Select Year</option>
+							<option value="{{ route('healing.stream.2020') }}">2020</option>
+							<option value="{{ route('healing.stream.2021') }}">2021</option>
+							<option value="{{ route('healing.stream.2022') }}">2022</option>
+							<option value="{{ route('healing.stream.2023') }}">2023</option>
+							<option value="{{ route('healing.stream.2024') }}">2024</option>
+							<option value="{{ route('healing.stream.2025') }}">2025</option>		
+						</select>
 						</div>
 					</div>
 				</div>
 	</div>
   <!--end row-->
 
-  <script>
+  {{-- <script>
 				$(document).ready(function() {
 					var table = $('#example').DataTable( {
 						lengthChange: false,
@@ -66,7 +39,7 @@
 					table.buttons().container()
 						.appendTo( '#example2_wrapper .col-md-6:eq(0)' );
 				} );
-			</script>
+	</script> --}}
 
 
 @endsection

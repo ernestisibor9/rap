@@ -62,10 +62,10 @@
 				  </div>
           <div class="col">
 										<!-- Button trigger modal -->
-										<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleLargeModal">Add Healing Stream</button>
+										<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleLargeModal">Add Healing Streams</button>
 										<!-- Modal -->
 										<div class="modal fade" id="exampleLargeModal" tabindex="-1" aria-hidden="true">
-											<div class="modal-dialog modal-lg p-2">
+											<div class="modal-dialog modal-lg p-4">
 												<div class="modal-content">
 													<div class="modal-header">
 														<h5 class="modal-title">Healing Streams</h5>
@@ -75,17 +75,22 @@
                             <form action="{{ route('healing.stream.store') }}" method="POST" enctype="multipart/form-data">
                                   @csrf
                               
+															<div class="row mb-3">
+																<div class="col-sm-9">
+																	<input type="hidden" name="minutes_directory" id="" class="form-control">
+																</div>
+															</div>
                               <div class="row mb-3">
                                 <label for="input46" class="col-sm-3 col-form-label">Healing Streams</label>
                                 <div class="col-sm-9">
-                                  <select class="form-select @error('healing_stream')is-invalid @enderror" name="healing_stream" id="input46">
+                                  <select class="form-select @error('healing_stream')is-invalid @enderror" name="healing_stream_type" id="input46">
                                     <option selected>Select healing streams </option>
                                     <option value="march">March</option>
                                     <option value="july">July</option>
                                     <option value="october">October</option>
                                   </select>
                                 </div>
-																@error('healing_stream')
+																@error('healing_stream_type')
 																	<span class="text-danger">{{ $message }}</span>
 																@enderror
                               </div>
@@ -94,11 +99,11 @@
                                 <div class="col-sm-9">
                                   <select class="form-select @error('year')is-invalid @enderror" name="year" id="input46">
                                     <option selected>Select Year </option>
-                                    <option value="2030">2030</option>
+                                    {{-- <option value="2030">2030</option>
                                     <option value="2029">2029</option>
                                     <option value="2028">2028</option>
 																		<option value="2027">2027</option>
-																		<option value="2026">2026</option>
+																		<option value="2026">2026</option> --}}
 																		<option value="2025">2025</option>
 																		<option value="2024">2024</option>
 																		<option value="2023">2023</option>
@@ -114,7 +119,7 @@
 															<div class="row mb-3">
 																<label for="input46" class="col-sm-3 col-form-label">Title</label>
 																<div class="col-sm-9">
-																	<input type="text" name="title" id="" class="form-control @error('title')is-invalid @enderror" placeholder="Title of song written by">
+																	<input type="text" name="title" id="" class="form-control @error('title')is-invalid @enderror" placeholder="Title">
 																	@error('title')
 																	<span class="text-danger">{{ $message }}</span>
 																	@enderror
@@ -178,7 +183,7 @@
 				</div><!--end row-->
 
 				<!--end row-->
-					<h6 class="mb-0 text-uppercase">Healing Stream View</h6>
+					<h6 class="mb-0 text-uppercase">Healing Streams View</h6>
 				<hr/>
 				<div class="card">
 					<div class="card-body">
@@ -187,11 +192,11 @@
 								<thead>
 									<tr>
 										<th>S/N</th>
-										<th>Healing Stream</th>
+										<th>Minutes Directory</th>
+										<th>Healing Streams</th>
 										<th>Year</th>
 										<th>Uploaded PDF</th>
 										<th>Content</th>
-										<th>Created At</th>
 										<th>Action</th>
 									</tr>
 								</thead>
@@ -199,15 +204,16 @@
 									@foreach ($healingStream as $key => $item)
 									<tr>
 										<td>{{ $key + 1 }}</td>
-										<td>{{ $item->healing_stream }}</td>
+										<td>{{ $item->minutes_directory }}</td>
+										<td>{{ $item->healing_stream_type }}</td>
 										<td>{{ $item->year }}</td>
 										<td>{{ Str::substr($item->pdf_file, 0, 30) }}...</td>
-										<td>{{ Str::substr($item->content, 0, 30) }}
+										<td>{!! Str::substr($item->content, 0, 60) !!}
 											<a href="{{ route('all.healing.content', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
 										</td>
 										{{-- <td>{{ $item->date_upload }}</td> --}}
 										{{-- <td>{{ $item->date_upload->format('l M d Y') }}</td> --}}
-										<td>{{ Carbon\Carbon::parse($item->date_upload)->format('l M d Y') }}</td>
+										{{-- <td>{{ Carbon\Carbon::parse($item->date_upload)->format('l M d Y') }}</td> --}}
 										<td>
 											<a href="{{ route('view.doc3', $item->id) }}" class="btn btn-success">View</a>
                       <a href="{{ route('edit.healing.stream', $item->id) }}" class="btn btn-primary">Edit</a>

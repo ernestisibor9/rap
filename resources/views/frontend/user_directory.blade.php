@@ -82,18 +82,22 @@
         <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
           <div class="card card-light-blue">
             <div class="card-body">
+              <a href="{{ route('christmas_select_user') }}" style="text-decoration: none; color: white; font-weight:bold;">
               <p class="mb-4"></p>
               <p class="fs-30 mb-2">Christmas</p>
               <p>Service</p>
+              </a>
             </div>
           </div>
         </div>
         <div class="col-md-6 stretch-card transparent">
           <div class="card card-light-danger">
             <div class="card-body">
+              <a href="{{ route('other_ministry_select_user') }}" style="text-decoration: none; color: white; font-weight:bold;">
               <p class="mb-4"></p>
               <p class="fs-30 mb-2">Other</p>
               <p>Ministry Programmes</p>
+              </a>
             </div>
           </div>
         </div>

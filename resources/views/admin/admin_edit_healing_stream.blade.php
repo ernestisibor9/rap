@@ -18,13 +18,31 @@
 									<div class="row mb-3">
 										<label for="input46" class="col-sm-3 col-form-label">Healing Stream</label>
 										<div class="col-sm-9">
-											<select class="form-select" name="healing_stream" id="input46">
+											<select class="form-select" name="healing_stream_type" id="input46">
 												@foreach($healingStreamData as $item)
-												<option value="{{ $item->healing_stream }}" {{ $healingStreamEdit->healing_stream === $item->healing_stream ? 'selected' : '' }}>{{ $item->healing_stream }}</option>
+												<option value="{{ $item->healing_stream_type }}" {{ $healingStreamEdit->healing_stream_type === $item->healing_stream_type ? 'selected' : '' }}>{{ $item->healing_stream_type }}</option>
+												<option value="march">March</option>
+												<option value="july">July</option>
+												<option value="october">October</option>
 												@endforeach
 											</select>
 										</div>
-			
+									</div>
+										<div class="row mb-3">
+                        <label for="input46" class="col-sm-3 col-form-label">Select Year</label>
+												<div class="col-sm-9">
+													<select class="form-select " name="year" id="input46">
+														@foreach($healingStreamData as $item)
+														<option value="{{ $item->year }}" {{ $healingStreamEdit->year === $item->year ? 'selected' : '' }}>{{ $item->year }}</option>
+														@endforeach
+														<option value="2025">2025</option>
+														<option value="2024">2024</option>
+														<option value="2023">2023</option>
+														<option value="2022">2022</option>
+														<option value="2021">2021</option>
+														<option value="2020">2020</option>
+													</select>
+											</div>
 									</div>
 									<div class="row mb-3">
 										<label for="input46" class="col-sm-3 col-form-label">Date</label>

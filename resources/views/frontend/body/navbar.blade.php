@@ -21,8 +21,9 @@
         </ul>
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item dropdown">
-            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-              <i class="icon-bell mx-0"></i>
+            <a class="nav-link dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+              {{-- <i class="icon-bell mx-0"></i> --}}
+              <i class="fa-solid fa-user"></i>
               <span class="count"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">

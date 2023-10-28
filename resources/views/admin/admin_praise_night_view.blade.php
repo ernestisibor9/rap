@@ -27,11 +27,18 @@
 									<div class="modal-body p-5">
                   <form action="{{ route('praise.night.store') }}" method="POST" enctype="multipart/form-data">
 										@csrf
+
+									<div class="row mb-3">
+										<div class="col-sm-9">
+											<input type="hidden" name="minutes_directory" id="" class="form-control">
+										</div>
+									</div>
+
 									<div class="row mb-3">
 										<label for="input46" class="col-sm-3 col-form-label">Title</label>
 										<div class="col-sm-9">
 
-											<input type="text" name="title" id="" class="form-control @error('title')is-invalid @enderror" placeholder="Title of song written by">
+											<input type="text" name="title" id="" class="form-control @error('title')is-invalid @enderror" placeholder="Title">
 											@error('title')
                         <span class="text-danger">{{ $message }}</span>
                       @enderror
@@ -49,7 +56,7 @@
 									<div class="row mb-3">
 										<label for="input46" class="col-sm-3 col-form-label">Praise Night</label>
 										<div class="col-sm-9">
-											<select class="form-select @error('praise_night')is-invalid @enderror" name="praise_night" id="input46">
+											<select class="form-select @error('praise_night_type')is-invalid @enderror" name="praise_night_type" id="input46">
 												<option selected>Select praise night</option>
 												<option value="praise_night_1">Praise Night 1</option>
 												<option value="praise_night_2">Praise Night 2</option>
@@ -78,7 +85,7 @@
 												<option value="praise_night_1">Praise Night 25</option>
 												<option value="praise_night_2">Praise Night 26</option>
 											  </select>
-												@error('praise_night')
+												@error('praise_night_type')
                         <span class="text-danger">{{ $message }}</span>
                       	@enderror
 										</div>
@@ -148,7 +155,7 @@
 								<option value="{{ route('praise_night_eighteen') }}">Praise Night 18</option>
 								<option value="{{ route('praise_night_nineteen') }}">Praise Night 19</option>
 								<option value="{{ route('praise_night_twenty') }}">Praise Night 20</option>		
-								</select>
+							</select>
 						</div>
 						</div>
 					</div>
@@ -248,10 +255,10 @@
 								<thead>
 									<tr>
 										<th>S/N</th>
-										<th>Praise Night</th>
+										<th>Minutes Directory</th>
+										<th>Praise Nights</th>
 										<th>Uploaded PDF Doc</th>
 										<th>Content</th>
-										<th>Date</th>
 										<th>Action</th>
 									</tr>
 								</thead>
@@ -259,14 +266,15 @@
 									@foreach ($praiseNightView as $key => $item)
 									<tr>
 										<td>{{ $key + 1 }}</td>
-										<td>{{ $item->praise_night }}</td>
+										<td>{{ $item->minutes_directory }}</td>
+										<td>{{ $item->praise_night_type }}</td>
 										<td>{{ Str::substr($item->pdf_file, 0, 30) }}...</td>
-										<td>{{ Str::substr($item->content, 0, 60) }}
+										<td>{!! Str::substr($item->content, 0, 60) !!}
 											<a href="{{ route('all.content', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
 										</td>
 										{{-- <td>{{ $item->date_upload }}</td> --}}
 										{{-- <td>{{ $item->date_upload->format('l M d Y') }}</td> --}}
-										<td>{{ Carbon\Carbon::parse($item->date_upload)->format('l M d Y') }}</td>
+										{{-- <td>{{ Carbon\Carbon::parse($item->date_upload)->format('l M d Y') }}</td> --}}
 										<td>
 											<a href="{{ route('view.doc', $item->id) }}" class="btn btn-success">View</a>
                       <a href="{{ route('edit.praise.night', $item->id) }}" class="btn btn-primary">Edit</a>

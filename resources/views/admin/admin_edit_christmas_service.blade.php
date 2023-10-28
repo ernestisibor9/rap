@@ -14,12 +14,12 @@
 								<form action="{{ route('christmas.service.update') }}" method="POST" enctype="multipart/form-data">
 											@csrf
                       <input class="form-control" type="hidden" name="id" id="id" value="{{$christmasEdit->id}}">
-									<div class="row mb-3">
+									{{-- <div class="row mb-3">
 										<label for="input46" class="col-sm-3 col-form-label">christmas Night</label>
 										<div class="col-sm-9">
 											<input type="text" name="christmas" class="form-control" id="" value="{{ $christmasEdit->christmas }}">
 										</div>
-									</div>
+									</div> --}}
 									<div class="row mb-3">
 										<label for="input46" class="col-sm-3 col-form-label">Title</label>
 										<div class="col-sm-9">

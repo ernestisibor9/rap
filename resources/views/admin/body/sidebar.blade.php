@@ -50,11 +50,11 @@
 					<ul>
 						<li> <a href="{{ route('admin.praise.night.view') }}"><i class='bx bx-radio-circle'></i>Praise Night</a>
 						</li>
-						<li> <a href="{{ route('admin.healing.stream.view') }}"><i class='bx bx-radio-circle'></i>Healing Stream</a>
+						<li> <a href="{{ route('admin.healing.stream.view') }}"><i class='bx bx-radio-circle'></i>Healing Streams</a>
 						</li>
 						<li> <a href="{{ route('admin.christmas.service.view') }}"><i class='bx bx-radio-circle'></i>Christmas Eve Service</a>
 						</li>
-						<li> <a href="#"><i class='bx bx-radio-circle'></i>Other Ministry Programmes</a>
+						<li> <a href="{{ route('admin.other.ministry.view') }}"><i class='bx bx-radio-circle'></i>Other Ministry Programs</a>
 						</li>
 					</ul>
 				</li>

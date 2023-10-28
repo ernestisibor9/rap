@@ -2,19 +2,19 @@
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="{{ route('user.dashboard') }}">
-              <i class="icon-grid menu-icon"></i>
+              <i class="fa-solid fa-gauge"></i>&nbsp;&nbsp;&nbsp;&nbsp;
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('user.search') }}">
-              <i class="icon-grid menu-icon"></i>
+              <i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;&nbsp;&nbsp;
               <span class="menu-title">Search Directory</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
+              <i class="fa-regular fa-folder-open"></i>&nbsp;&nbsp;&nbsp;&nbsp;
               <span class="menu-title">Minutes Directory</span>
               <i class="menu-arrow"></i>
             </a>
@@ -22,32 +22,32 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{ route('praise_night_select') }}">Praise Night</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('healing_stream_select') }}">Healing Stream</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('christmas_select') }}">Christmas Service</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Other Ministry Program</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('christmas_select_user') }}">Christmas Service</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('other_ministry_select_user') }}">Other Ministry</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="$">
-              <i class="icon-grid menu-icon"></i>
+            <a class="nav-link" href="#">
+              <i class="fa-regular fa-folder-open"></i>&nbsp;&nbsp;&nbsp;&nbsp;
               <span class="menu-title">Song Leaders Directory</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <i class="icon-grid menu-icon"></i>
+              <i class="fa-regular fa-folder-open"></i>&nbsp;&nbsp;&nbsp;&nbsp;
               <span class="menu-title">Song Directory</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('lyrics') }}">
-              <i class="icon-grid menu-icon"></i>
+              <i class="fa-solid fa-music"></i>&nbsp;&nbsp;&nbsp;&nbsp;
               <span class="menu-title">Lyrics</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('user.logout') }}">
-              <i class="icon-grid mdi mdi-face"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;&nbsp;&nbsp;
               <span class="menu-title">Logout</span>
             </a>
           </li>

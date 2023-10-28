@@ -28,6 +28,7 @@
 								<thead>
 									<tr>
 										<th>S/N</th>
+										<th>Minutes Directory</th>
 										<th>Title</th>
 										<th>Uploaded PDF Doc</th>									
 										<th>Content</th>
@@ -37,9 +38,10 @@
 									@foreach ($searchData as $key => $item)
 									<tr>
 										<td>{{ $key + 1 }}</td>
+										<td>{{ $item->minutes_directory }}</td>
 										<td>{{ $item->title }}</td>
 										<td><a href="{{ route('view.pdfdoc', $item->id) }}">{{ Str::substr($item->pdf_file, 0, 30) }}...</a></td>
-										<td>{{ Str::substr($item->content, 0, 30) }}
+										<td>{!! Str::substr($item->content, 0, 30) !!}
 											<a href="{{ route('full.content.doc', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
 										</td>
 										{{-- <td><a href="{{ route('view.pdf', $item->id) }}" class="btn btn-success">View</a></td> --}}

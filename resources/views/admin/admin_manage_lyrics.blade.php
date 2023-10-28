@@ -32,7 +32,7 @@
             <tr>
               <td>{{ $key + 1 }}</td>
               <td>{{ $item->title }}</td>
-              <td>{{ Str::substr($item->lyrics, 0, 30) }}
+              <td>{!! Str::substr($item->lyrics, 0, 60) !!}
 											<a href="{{ route('lyrics.content', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
 										</td>
               <td>{{ $item->created_at->format('l M d Y') }}</td>

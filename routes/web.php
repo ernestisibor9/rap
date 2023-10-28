@@ -4,6 +4,7 @@ use App\Http\Controllers\MinutesController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LeaderController;
 use App\Http\Controllers\LyricsController;
+use App\Http\Controllers\OtherMinistryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SongController;
@@ -80,13 +81,19 @@ Route::middleware(['auth', 'roles:user'])->group(function(){
 
     // Lyrics
     Route::get('/user/lyrics', [UserLyricsController::class, 'LyricsSelect'])->name('lyrics');
+    Route::get('/lyrics/content/view/{id}', [UserLyricsController::class, 'LyricsContent'])->name('lyrics.content.user');
     Route::get('/lyrics/full/content/{id}', [UserLyricsController::class, 'FullContent3'])->name('full.content3');
     Route::get('/single/lyrics/{title}', [UserLyricsController::class, 'SingleLyrics'])->name('single.lyrics');
 
     // Christmas 
-    Route::get('/user/christmas', [UserChristmasController::class, 'ChristmasSelect'])->name('christmas_select');
+    Route::get('/user/christmas/select', [UserChristmasController::class, 'ChristmasSelect'])->name('christmas_select_user');
     Route::get('/viewpdfchristmas/doc/{id}', [UserChristmasController::class, 'ViewPdfChristmas'])->name('view4.pdf');
     Route::get('/christmas/full/content/{id}', [UserChristmasController::class, 'FullContent4'])->name('full.content4');
+
+    // Other Ministry Programs
+    Route::get('/user/other/ministry', [OtherMinistryController::class, 'OtherMinistrySelect'])->name('other_ministry_select_user');
+    Route::get('/viewpdfotherministry/doc/{id}', [OtherMinistryController::class, 'ViewPdfOtherMinistry'])->name('view5.pdf');
+    Route::get('/other/ministry/full/content/{id}', [OtherMinistryController::class, 'FullContent5'])->name('full.content5');
 
     // Dashboard
     Route::get('/user/dashboard/minutes', [UserDashboardController::class, 'UserDirectory'])->name('user_directory');
@@ -166,10 +173,13 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
         Route::get('/delete/praise/night/{id}', 'DeletePraiseNight')->name('delete.praise.night');
         Route::get('/praise/night/all/content/{id}', 'AllContent')->name('all.content');
         Route::get('/christmas/all/content/{id}', 'AllContent5')->name('all.content5');
+        Route::get('/other/ministry/all/content/{id}', 'AllContent7')->name('all.content7');
         Route::get('/healing/stream/all/content/{id}', 'AllHealingContent')->name('all.healing.content');
         Route::get('/view/doc/{id}', 'ViewDoc')->name('view.doc');
         Route::get('/view/doc2/{id}', 'ViewDoc2')->name('view.doc2');
+        Route::get('/view/doc6/{id}', 'ViewDoc6')->name('view.doc6');
         Route::get('/view/doc3/{id}', 'ViewDoc3')->name('view.doc3');
+        Route::get('/view/doc2/{id}', 'ViewDoc4')->name('view.doc4');
         Route::get('/admin/healing/stream/view', 'HealingStreamView')->name('admin.healing.stream.view');
         Route::post('/admin/add/healing/stream', 'HealingStreamStore')->name('healing.stream.store');
         Route::get('/healing/stream/march', 'HealingStreamMarch')->name('healing_stream_march');
@@ -179,11 +189,16 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
         Route::post('/healing/stream/update', 'UpdateHealingStream')->name('healing.stream.update');
         Route::get('/delete/healing/stream/{id}', 'DeleteHealingStream')->name('delete.healing.stream');
         Route::get('/admin/christmas/service/view', 'ChristmasServiceView')->name('admin.christmas.service.view');
+        Route::get('/admin/other/ministry/view', 'OtherMinistryView')->name('admin.other.ministry.view');
         Route::post('/admin/add/christmas/service', 'ChristmasServiceStore')->name('christmas.service.store');
+        Route::post('/admin/add/other/ministry', 'OtherMinistryStore')->name('other.ministry.store');
         Route::get('/edit/praise/night/{id}', 'EditPraiseNight')->name('edit.praise.night');
         Route::get('/edit/christmas/service/{id}', 'EditChristmasService')->name('christmas.service.edit');
+        Route::get('/edit/other/ministry/{id}', 'EditOtherMinistry')->name('other.ministry.edit');
         Route::post('/christmas/service/update', 'UpdateChristmasService')->name('christmas.service.update');
+        Route::post('/other/ministry/update', 'UpdateOtherMinistry')->name('other.ministry.update');
         Route::get('/delete/christmas/service/{id}', 'DeleteChristmasService')->name('delete.christmas.service');
+        Route::get('/delete/other/ministry/{id}', 'DeleteOtherMinistry')->name('delete.other.ministry');
 	});
 
     // Song Controller

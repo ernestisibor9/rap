@@ -28,11 +28,18 @@
 									<div class="modal-body p-5">
                   <form action="{{ route('christmas.service.store') }}" method="POST" enctype="multipart/form-data">
 										@csrf
+									
+									<div class="row mb-3">
+										<div class="col-sm-9">
+											<input type="hidden" name="minutes_directory" id="" class="form-control">
+										</div>
+									</div>
+									
 									<div class="row mb-3">
 										<label for="input46" class="col-sm-3 col-form-label">Title</label>
 										<div class="col-sm-9">
 
-											<input type="text" name="title" id="" class="form-control @error('title')is-invalid @enderror" placeholder="Title of song written by">
+											<input type="text" name="title" id="" class="form-control @error('title')is-invalid @enderror" placeholder="Title">
 											@error('title')
                         <span class="text-danger">{{ $message }}</span>
                       @enderror
@@ -109,7 +116,7 @@
 								<thead>
 									<tr>
 										<th>S/N</th>
-										<th>Christmas</th>
+										<th>Minutes Directory</th>
 										<th>Uploaded PDF Doc</th>
 										<th>Content</th>
 										<th>Date</th>
@@ -120,16 +127,16 @@
 									@foreach ($christmasData as $key => $item)
 									<tr>
 										<td>{{ $key + 1 }}</td>
-										<td>{{ $item->christmas }}</td>
+										<td>{{ $item->minutes_directory }}</td>
 										<td>{{ Str::substr($item->pdf_file, 0, 30) }}...</td>
-										<td>{{ Str::substr($item->content, 0, 60) }}
+										<td>{!! Str::substr($item->content, 0, 60) !!}
 											<a href="{{ route('all.content5', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
 										</td>
 										{{-- <td>{{ $item->date_upload }}</td> --}}
 										{{-- <td>{{ $item->date_upload->format('l M d Y') }}</td> --}}
 										<td>{{ Carbon\Carbon::parse($item->date_upload)->format('l M d Y') }}</td>
 										<td>
-											<a href="{{ route('view.doc2', $item->id) }}" class="btn btn-success">View</a>
+											<a href="{{ route('view.doc6', $item->id) }}" class="btn btn-success">View</a>
                       <a href="{{ route('christmas.service.edit', $item->id) }}" class="btn btn-primary">Edit</a>
                       <a href="{{ route('delete.christmas.service', $item->id) }}" class="btn btn-danger" id="delete" title="Delete Data">Delete</a>
 										</td>

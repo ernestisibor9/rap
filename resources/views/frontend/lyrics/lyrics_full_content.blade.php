@@ -11,10 +11,10 @@
 <div class="content-wrapper">
 	<div class="container">
     <div class="row bg-white p-3">
-      <div class="col-md-2">
+      {{-- <div class="col-md-2">
         <h6 style="color: blue;">{{ Carbon\Carbon::parse($contentData->date_upload)->format('l M d Y') }}</h6>
-      </div>
-      <div class="col-md-10">
+      </div> --}}
+      <div class="col-md-12">
         <h4 class="text-center">{{ $contentData->title }}</h4>
         <p class="p-2" >{!! $contentData->lyrics !!}</p>
       </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lyrics;
+use App\Models\Minutes;
 use Illuminate\Http\Request;
 
 class UserLyricsController extends Controller
@@ -20,5 +21,10 @@ class UserLyricsController extends Controller
      public function FullContent3($id){
         $contentData = Lyrics::findOrFail($id);
         return view('frontend.lyrics.lyrics_full_content', compact('contentData'));
+    }
+    // Lyrics content
+    public function LyricsContent($id){
+        $contentData2 = Lyrics::findOrFail($id);
+        return view('frontend.lyrics.lyrics_full_content_view', compact('contentData2'));
     }
 }

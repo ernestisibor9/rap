@@ -17,9 +17,9 @@
 								<div>
 									<p class="mb-0 text-secondary">Upload Praise Night</p>
 									<h4 class="my-1 text-info">Minutes</h4>
-									<p class="mb-0 font-13">+2.5% from last week</p>
+									<p class="mb-0 font-13"></p>
 								</div>
-								<div class="widgets-icons-2 rounded-circle bg-gradient-blues text-white ms-auto"><i class='bx bxs-cart'></i>
+								<div class="widgets-icons-2 rounded-circle bg-gradient-blues text-white ms-auto"><i class='bx bxs-folder'></i>
 								</div>
 							</div>
 							</a>
@@ -34,7 +34,7 @@
 							   <div>
 								   <p class="mb-0 text-secondary">Upload</p>
 								   <h4 class="my-1 text-danger">Lyrics</h4>
-								   <p class="mb-0 font-13">+5.4% from last week</p>
+								   <p class="mb-0 font-13"></p>
 							   </div>
 							   <div class="widgets-icons-2 rounded-circle bg-gradient-burning text-white ms-auto"><i class='bx bxs-wallet'></i>
 							   </div>
@@ -51,7 +51,7 @@
 							   <div>
 								   <p class="mb-0 text-secondary">Upload List of</p>
 								   <h4 class="my-1 text-success">Songs</h4>
-								   <p class="mb-0 font-13">-4.5% from last week</p>
+								   <p class="mb-0 font-13"></p>
 							   </div>
 							   <div class="widgets-icons-2 rounded-circle bg-gradient-ohhappiness text-white ms-auto"><i class='bx bxs-bar-chart-alt-2' ></i>
 							   </div>
@@ -68,7 +68,7 @@
 							   <div>
 								   <p class="mb-0 text-secondary">Upload Lead</p>
 								   <h4 class="my-1 text-warning">Singers</h4>
-								   <p class="mb-0 font-13">+8.4% from last week</p>
+								   <p class="mb-0 font-13"></p>
 							   </div>
 							   <div class="widgets-icons-2 rounded-circle bg-gradient-orange text-white ms-auto"><i class='bx bxs-group'></i>
 							   </div>

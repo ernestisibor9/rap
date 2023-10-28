@@ -12,22 +12,21 @@
 				<div class="card">
 					<div class="card-body">
 						<div class="table-responsive">
-							<table id="example" class="table table-striped table-bordered" style="width:100%">
+							<table id="example" class="table table-bordered" style="width:100%">
 								<thead>
 									<tr>
 										<th>S/N</th>
-										<th>Title</th>	
-										<th>Lyrics</th>								
+										<th>Title</th>								
 									</tr>
 								</thead>
 								<tbody>								
 									@foreach ($lyrics as $key => $item)
 									<tr>
 										<td>{{ $key + 1 }}</td>
-										<td>{{ $item->title }}</td>
-										<td>{{ Str::substr($item->lyrics, 0, 60) }}
+										<td><a class="btn btn-primary" href="{{ route('lyrics.content.user', $item->id) }}">{{ $item->title }}</a></td>
+										{{-- <td>{{ Str::substr($item->lyrics, 0, 60) }}
 											<a href="{{ route('full.content3', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
-										</td>
+										</td> --}}
 									</tr>
 									@endforeach
 								</tbody>
@@ -38,7 +37,7 @@
 	</div>
   <!--end row-->
 
-  <script>
+  {{-- <script>
 				$(document).ready(function() {
 					var table = $('#example').DataTable( {
 						lengthChange: false,
@@ -50,7 +49,7 @@
 					table.buttons().container()
 						.appendTo( '#example2_wrapper .col-md-6:eq(0)' );
 				} );
-			</script>
+			</script> --}}
 
 
 @endsection

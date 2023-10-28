@@ -32,10 +32,10 @@
 									@foreach ($praise_night_six as $key => $item)
 									<tr>
 										<td>{{ $key + 1 }}</td>
-										<td>{{ $item->praise_night }}</td>
+										<td>{{ $item->praise_night_type }}</td>
 										<td>{{ $item->title }}</td>
 										<td>{{ Str::substr($item->pdf_file, 0, 30) }}...</td>
-										<td>{{ Str::substr($item->content, 0, 30) }}
+										<td>{!! Str::substr($item->content, 0, 30) !!}
 											<a href="{{ route('all.content', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
 										</td>
 										<td>{{ Carbon\Carbon::parse($item->date_upload)->format('l M d Y') }}</td>

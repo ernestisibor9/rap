@@ -17,7 +17,7 @@
 								<thead>
 									<tr>
 										<th>S/N</th>
-										<th>Christmas</th>	
+										<th>Minutes Directory</th>	
 										<th>Title</th>	
                     <th>Uploaded PDF</th>		
                     <th>Content</th>					
@@ -27,10 +27,10 @@
 									@foreach ($christmas as $key => $item)
 									<tr>
 										<td>{{ $key + 1 }}</td>
-										<td>{{ $item->christmas }}</td>
+										<td>{{ $item->minutes_directory }}</td>
 										<td>{{ $item->title }}</td>
-										<td><a href="{{ route('view4.pdf', $item->id) }}">{{ Str::substr($item->pdf_file, 0, 30) }}...</a></td>
-										<td>{{ Str::substr($item->content, 0, 30) }}
+										<td><a style="text-decoration: none; font-weight: 600"  href="{{ route('view4.pdf', $item->id) }}">{{ Str::substr($item->pdf_file, 0, 30) }}...</a></td>
+										<td>{!! Str::substr($item->content, 0, 30) !!}
 											<a href="{{ route('full.content4', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
 										</td>
 										{{-- <td>{{ $item->date_upload }}</td> --}}
@@ -46,7 +46,7 @@
 	</div>
   <!--end row-->
 
-  <script>
+  {{-- <script>
 				$(document).ready(function() {
 					var table = $('#example').DataTable( {
 						lengthChange: false,
@@ -58,7 +58,7 @@
 					table.buttons().container()
 						.appendTo( '#example2_wrapper .col-md-6:eq(0)' );
 				} );
-			</script>
+			</script> --}}
 
 
 @endsection

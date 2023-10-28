@@ -33,10 +33,10 @@
 									@foreach ($healing_stream_july as $key => $item)
 									<tr>
 										<td>{{ $key + 1 }}</td>
-										<td>{{ $item->healing_stream }}</td>
+										<td>{{ $item->healing_stream_type }}</td>
 										<td>{{ $item->title }}</td>
 										<td>{{ Str::substr($item->pdf_file, 0, 30) }}...</td>
-										<td>{{ Str::substr($item->content, 0, 30) }}
+										<td>{!! Str::substr($item->content, 0, 30) !!}
 											<a href="{{ route('all.healing.content', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
 										</td>
 										{{-- <td>{{ $item->date_upload }}</td> --}}
