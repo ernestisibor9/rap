@@ -20,8 +20,8 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{ route('praise_night_select') }}">Praise Night</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('healing_stream_select') }}">Healing Stream</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('praise_night_select') }}">Praise Nights</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('healing_stream_select') }}">Healing Streams</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('christmas_select_user') }}">Christmas Service</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('other_ministry_select_user') }}">Other Ministry</a></li>
               </ul>

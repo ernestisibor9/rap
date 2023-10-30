@@ -28,10 +28,10 @@
 									@foreach ($healing_stream_2026 as $key => $item)
 									<tr>
 										<td>{{ $key + 1 }}</td>
-										<td>{{ $item->healing_stream_type }}</td>
+										<td>{{ Str::ucfirst($item->healing_stream_type) }}</td>
                     <td>{{ $item->year }}</td>
 										<td>{{ $item->title }}</td>
-										<td><a href="{{ route('view2.pdf', $item->id) }}">{{ Str::substr($item->pdf_file, 0, 30) }}...</a></td>
+										<td><a style="text-decoration: none; font-weight: 600" href="{{ route('view2.pdf', $item->id) }}">{{ Str::substr($item->pdf_file, 0, 30) }}...</a></td>
 										<td>{!! Str::substr($item->content, 0, 30) !!}
 											<a href="{{ route('full.content', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
 										</td>

@@ -12,7 +12,7 @@
     <div class="col-md-12 grid-margin">
       <div class="row">
         <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-          <h3 class="font-weight-bold">Rehearsal Archival Portal</h3>
+          <h3 class="font-weight-bold">Rehearsals Archival Portal</h3>
           <h6 class="font-weight-normal mb-0"></h6>
         </div>
         <div class="col-12 col-xl-4">
@@ -60,8 +60,8 @@
             <div class="card-body">
               <a href="{{ route('praise_night_select') }}" style="text-decoration: none; color: white; font-weight:bold;">
                 <p class="mb-4"></p>
-                <p class="fs-30 mb-2">Praise</p>
-                <p>Night</p>
+                <p class="fs-30 mb-3">Praise</p>
+                <p class="fs-30 mb-2">Night</p>
               </a>
             </div>
           </div>
@@ -71,8 +71,8 @@
             <div class="card-body">
               <a href="{{ route('healing_stream_select') }}" style="text-decoration: none; color: white; font-weight:bold;">
                 <p class="mb-4"></p>
-                <p class="fs-30 mb-2">Healing</p>
-                <p>Stream</p>
+                <p class="fs-30 mb-3">Healing</p>
+                <p class="fs-30 mb-2">Streams</p>
               </a>
             </div>
           </div>
@@ -84,8 +84,8 @@
             <div class="card-body">
               <a href="{{ route('christmas_select_user') }}" style="text-decoration: none; color: white; font-weight:bold;">
               <p class="mb-4"></p>
-              <p class="fs-30 mb-2">Christmas</p>
-              <p>Service</p>
+              <p class="fs-30 mb-3">Christmas</p>
+              <p class="fs-30 mb-2">Service</p>
               </a>
             </div>
           </div>
@@ -95,8 +95,8 @@
             <div class="card-body">
               <a href="{{ route('other_ministry_select_user') }}" style="text-decoration: none; color: white; font-weight:bold;">
               <p class="mb-4"></p>
-              <p class="fs-30 mb-2">Other</p>
-              <p>Ministry Programmes</p>
+              <p class="fs-30 mb-3">Other Ministry</p>
+              <p class="fs-30 mb-2">Programs</p>
               </a>
             </div>
           </div>

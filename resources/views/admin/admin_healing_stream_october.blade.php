@@ -33,7 +33,7 @@
 									@foreach ($healing_stream_october as $key => $item)
 									<tr>
 										<td>{{ $key + 1 }}</td>
-										<td>{{ $item->healing_stream_type }}</td>
+										<td>{{ Str::ucfirst($item->healing_stream_type) }}</td>
 										<td>{{ $item->title }}</td>
 										<td>{{ Str::substr($item->pdf_file, 0, 30) }}...</td>
 										<td>{!! Str::substr($item->content, 0, 30) !!}

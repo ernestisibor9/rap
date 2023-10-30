@@ -41,7 +41,7 @@
               {{-- <img src="{{ asset('frontend/images/logo-icon2.png') }}" alt=""> --}}
               <div class="text-center">
                 <img src="{{ asset('frontend/images/logo-icon2.png') }}" alt="">
-                <h5>Rehearsal Archival Portal</h5>
+                <h5>Rehearsals Archival Portal</h5>
                 <h5 class="create">Login</h5>
                 <!-- <h3>school account</h3> -->
                 <p class="small-text">Sign in to continue</p>

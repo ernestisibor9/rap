@@ -28,7 +28,7 @@
 				</li> --}}
 				
 				<li class="menu-label">RAP Menus</li>
-				<li>
+				{{-- <li>
 					<a href="#" class="has-arrow">
 						<div class="parent-icon"><i class='bx bx-search'></i>
 						</div>
@@ -40,7 +40,7 @@
 						<li> <a href="{{ route('search.manage') }}"><i class='bx bx-radio-circle'></i>Manage Directory</a>
 						</li>
 					</ul>
-				</li>
+				</li> --}}
 				<li>
 					<a href="#" class="has-arrow">
 						<div class="parent-icon"><i class='bx bx-book'></i>

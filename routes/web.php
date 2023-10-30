@@ -57,6 +57,24 @@ Route::middleware(['auth', 'roles:user'])->group(function(){
     Route::get('/user/praise/night/10', [UserPraiseNightController::class, 'PraiseNight10'])->name('praise.night.10');
     Route::get('/user/praise/night/11', [UserPraiseNightController::class, 'PraiseNight11'])->name('praise.night.11');
     Route::get('/user/praise/night/12', [UserPraiseNightController::class, 'PraiseNight12'])->name('praise.night.12');
+    Route::get('/user/praise/night/13', [UserPraiseNightController::class, 'PraiseNight13'])->name('praise.night.13');
+    Route::get('/user/praise/night/14', [UserPraiseNightController::class, 'PraiseNight14'])->name('praise.night.14');
+    Route::get('/user/praise/night/15', [UserPraiseNightController::class, 'PraiseNight15'])->name('praise.night.15');
+    Route::get('/user/praise/night/16', [UserPraiseNightController::class, 'PraiseNight16'])->name('praise.night.16');
+    Route::get('/user/praise/night/17', [UserPraiseNightController::class, 'PraiseNight17'])->name('praise.night.17');
+    Route::get('/user/praise/night/18', [UserPraiseNightController::class, 'PraiseNight18'])->name('praise.night.18');
+    Route::get('/user/praise/night/19', [UserPraiseNightController::class, 'PraiseNight19'])->name('praise.night.19');
+    Route::get('/user/praise/night/20', [UserPraiseNightController::class, 'PraiseNight20'])->name('praise.night.20');
+    Route::get('/user/praise/night/21', [UserPraiseNightController::class, 'PraiseNight21'])->name('praise.night.21');
+    Route::get('/user/praise/night/22', [UserPraiseNightController::class, 'PraiseNight22'])->name('praise.night.22');
+    Route::get('/user/praise/night/23', [UserPraiseNightController::class, 'PraiseNight23'])->name('praise.night.23');
+    Route::get('/user/praise/night/24', [UserPraiseNightController::class, 'PraiseNight24'])->name('praise.night.24');
+    Route::get('/user/praise/night/25', [UserPraiseNightController::class, 'PraiseNight25'])->name('praise.night.25');
+    Route::get('/user/praise/night/26', [UserPraiseNightController::class, 'PraiseNight26'])->name('praise.night.26');
+    Route::get('/user/praise/night/27', [UserPraiseNightController::class, 'PraiseNight27'])->name('praise.night.27');
+    Route::get('/user/praise/night/28', [UserPraiseNightController::class, 'PraiseNight28'])->name('praise.night.28');
+    Route::get('/user/praise/night/29', [UserPraiseNightController::class, 'PraiseNight29'])->name('praise.night.29');
+    Route::get('/user/praise/night/30', [UserPraiseNightController::class, 'PraiseNight30'])->name('praise.night.30');
     Route::get('/viewpdf/doc/{id}', [UserPraiseNightController::class, 'ViewPdf'])->name('view.pdf');
     Route::get('/praise/night/full/content/{id}', [UserPraiseNightController::class, 'FullContent'])->name('full.content2');
 

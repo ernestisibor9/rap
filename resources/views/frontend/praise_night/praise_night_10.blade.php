@@ -28,7 +28,7 @@
 										<td>{{ $key + 1 }}</td>
 										<td>{{ $item->praise_night_type }}</td>
 										<td>{{ $item->title }}</td>
-										<td><a href="{{ route('view.pdf', $item->id) }}">{{ Str::substr($item->pdf_file, 0, 30) }}...</a></td>
+										<td><a style="text-decoration: none; font-weight: 600" href="{{ route('view.pdf', $item->id) }}">{{ Str::substr($item->pdf_file, 0, 30) }}...</a></td>
 										<td>{!! Str::substr($item->content, 0, 30) !!}
 											<a href="{{ route('full.content2', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
 										</td>

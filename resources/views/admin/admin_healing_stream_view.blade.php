@@ -204,8 +204,8 @@
 									@foreach ($healingStream as $key => $item)
 									<tr>
 										<td>{{ $key + 1 }}</td>
-										<td>{{ $item->minutes_directory }}</td>
-										<td>{{ $item->healing_stream_type }}</td>
+										<td>{{ Str::ucfirst($item->minutes_directory) }}</td>
+										<td>{{ Str::ucfirst($item->healing_stream_type) }}</td>
 										<td>{{ $item->year }}</td>
 										<td>{{ Str::substr($item->pdf_file, 0, 30) }}...</td>
 										<td>{!! Str::substr($item->content, 0, 60) !!}

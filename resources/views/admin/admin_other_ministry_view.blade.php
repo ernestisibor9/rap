@@ -127,7 +127,7 @@
 									@foreach ($otherMinistryData as $key => $item)
 									<tr>
 										<td>{{ $key + 1 }}</td>
-										<td>{{ $item->minutes_directory }}</td>
+										<td>{{ Str::ucfirst($item->minutes_directory) }}</td>
 										<td>{{ Str::substr($item->pdf_file, 0, 30) }}...</td>
 										<td>{!! Str::substr($item->content, 0, 60) !!}
 											<a href="{{ route('all.content5', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
@@ -136,7 +136,7 @@
 										{{-- <td>{{ $item->date_upload->format('l M d Y') }}</td> --}}
 										<td>{{ Carbon\Carbon::parse($item->date_upload)->format('l M d Y') }}</td>
 										<td>
-											<a href="{{ route('view.doc5', $item->id) }}" class="btn btn-success">View</a>
+											<a href="{{ route('view5.pdf', $item->id) }}" class="btn btn-success">View</a>
                       <a href="{{ route('other.ministry.edit', $item->id) }}" class="btn btn-primary">Edit</a>
                       <a href="{{ route('delete.other.ministry', $item->id) }}" class="btn btn-danger" id="delete" title="Delete Data">Delete</a>
 										</td>

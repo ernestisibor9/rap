@@ -12,7 +12,7 @@
     <div class="col-md-12 grid-margin">
       <div class="row">
         <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-          <h3 class="font-weight-bold">Rehearsal Archival Portal</h3>
+          <h3 class="font-weight-bold">Rehearsals Archival Portal</h3>
           <h6 class="font-weight-normal mb-0"></h6>
         </div>
         <div class="col-12 col-xl-4">
@@ -60,8 +60,9 @@
             <div class="card-body">
               <a href="{{ route('user_directory') }}" style="text-decoration: none; color: white; font-weight:bold;">
                 <p class="mb-4"></p>
-                <p class="fs-30 mb-2">Minutes</p>
-                <p>Directory</p>
+                <p class="fs-30 mb-3">Minutes</p>
+                <p class="fs-30 mb-2">Directory</p>
+                {{-- <p>Directory</p> --}}
               </a>
             </div>
           </div>
@@ -70,8 +71,8 @@
           <div class="card card-dark-blue">
             <div class="card-body">
               <p class="mb-4"></p>
-              <p class="fs-30 mb-2">Song Leaders</p>
-              <p>Directory</p>
+              <p class="fs-30 mb-3">Song Leaders</p>
+              <p class="fs-30 mb-2">Directory</p>
             </div>
           </div>
         </div>
@@ -81,8 +82,8 @@
           <div class="card card-light-blue">
             <div class="card-body">
               <p class="mb-4"></p>
-              <p class="fs-30 mb-2">Songs</p>
-              <p>Directory</p>
+              <p class="fs-30 mb-3">Songs</p>
+              <p class="fs-30 mb-2">Directory</p>
             </div>
           </div>
         </div>
@@ -91,8 +92,8 @@
             <div class="card-body">
               <a href="{{ route('lyrics') }}" style="text-decoration: none; color: white; font-weight:bold;">
                 <p class="mb-4"></p>
-                <p class="fs-30 mb-2">Lyrics</p>
-                <p>Directory</p>
+                <p class="fs-30 mb-3">Lyrics</p>
+                <p class="fs-30 mb-2">Directory</p>
               </a>
             </div>
           </div>

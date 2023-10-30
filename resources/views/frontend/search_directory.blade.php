@@ -39,12 +39,12 @@
 									@foreach ($search_directory as $key => $item)
 									<tr>
 										<td>{{ $key + 1 }}</td>
-										<td>{{ $item->minutes_directory }}</td>
+										<td>{{ Str::ucfirst($item->minutes_directory) }}</td>
 										<td>{{ $item->praise_night_type }}</td>
-										<td>{{ $item->healing_stream_type }}</td>
+										<td>{{ Str::ucfirst($item->healing_stream_type ) }}</td>
 										<td>{{ $item->year }}</td>
 										<td>{{ $item->title }}</td>
-										<td><a href="{{ route('view.pdfdoc', $item->id) }}">{{ Str::substr($item->pdf_file, 0, 30) }}...</a></td>
+										<td><a style="text-decoration: none; font-weight: 600" href="{{ route('view.pdfdoc', $item->id) }}">{{ Str::substr($item->pdf_file, 0, 30) }}...</a></td>
 										<td>{!! Str::substr($item->content, 0, 60) !!}
 											<a href="{{ route('full.content.doc', $item->id) }}"><small style="color: blueviolet">read more ...</small></a>
 										</td>

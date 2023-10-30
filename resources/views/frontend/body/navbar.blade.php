@@ -28,7 +28,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
               <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-              <a class="dropdown-item preview-item" href="{{ route('admin.login') }}">
+              {{-- <a class="dropdown-item preview-item" href="{{ route('admin.login') }}">
                 <div class="preview-thumbnail">
                   <div class="preview-icon bg-success">
                     <i class="ti-info-alt mx-0"></i>
@@ -40,7 +40,7 @@
                     
                   </p>
                 </div>
-              </a>
+              </a> --}}
               <a class="dropdown-item preview-item" href="{{ route('user.logout') }}">
                 <div class="preview-thumbnail">
                   <div class="preview-icon bg-warning">
